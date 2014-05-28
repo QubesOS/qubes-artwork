@@ -1,0 +1,168 @@
+#Window.SetBackgroundTopColor(0.263, 0.294, 0.325);
+#Window.SetBackgroundBottomColor(0.263, 0.294, 0.325);
+Window.SetBackgroundTopColor(0, 0, 0);
+Window.SetBackgroundBottomColor(0, 0, 0);
+
+logo.image = Image("qubes-logo-solid.png");
+logo.sprite = Sprite(logo.image);
+logo.opacity_angle = 0;
+
+fun refresh_callback () {
+    logo.sprite.SetX(Window.GetX() + (Window.GetWidth()  - logo.image.GetWidth())  / 2);
+    logo.sprite.SetY(Window.GetY() + (Window.GetHeight() - logo.image.GetHeight()) / 2);
+    logo.sprite.SetOpacity(1);
+}
+  
+Plymouth.SetRefreshFunction(refresh_callback);
+
+#----------------------------------------- Dialogue --------------------------------
+
+status = "normal";
+
+fun dialog_setup(text)
+{
+    local.prompt;
+    local.entry;
+    local.lock;
+    
+    prompt.text = text;
+    prompt.image = Image.Text(text, 1, 1, 1);
+    lock.image = Image("padlock.png");
+    entry.image = Image("entry.png");
+    
+    prompt.sprite = Sprite(prompt.image);
+    prompt.sprite.SetX(logo.sprite.GetX() + (logo.image.GetWidth() - prompt.image.GetWidth()) / 2);
+    prompt.sprite.SetY(logo.sprite.GetY() + logo.image.GetHeight() + 16);
+    prompt.sprite.SetZ(1);
+    prompt.sprite.text = text;
+
+    entry.sprite = Sprite(entry.image);
+    entry.sprite.SetX(prompt.sprite.GetX() + (prompt.image.GetWidth() - entry.image.GetWidth()) / 2);
+    entry.sprite.SetY(prompt.sprite.GetY() + prompt.image.GetHeight() + 16);
+    entry.sprite.SetZ(1);
+    
+    lock.sprite = Sprite(lock.image);
+    lock.sprite.SetX(entry.sprite.GetX() + (entry.image.GetWidth() - lock.image.GetWidth()) / 2);
+    lock.sprite.SetY(entry.sprite.GetY() + entry.image.GetHeight() + 16);
+    lock.sprite.SetZ(1);
+    
+    global.dialog.prompt = prompt;
+    global.dialog.entry = entry;
+    global.dialog.lock = lock;
+    global.dialog.bullet_image = Image("bullet.png");
+    dialog_opacity(1);
+}
+    
+fun dialog_opacity(opacity)
+{
+    dialog.prompt.sprite.SetOpacity(opacity);
+    dialog.lock.sprite.SetOpacity(opacity);
+    dialog.entry.sprite.SetOpacity(opacity);
+    for (index = 0; dialog.bullet[index]; index++) {
+        dialog.bullet[index].sprite.SetOpacity(opacity);
+    }
+}
+
+fun display_normal_callback()
+{
+    global.status = "normal";
+    if (global.dialog)
+        dialog_opacity(0);
+}
+
+fun display_password_callback(prompt, bullets)
+{
+    if (prompt.SubString(0,32) == "Please enter passphrase for disk") {
+        prompt = "Disk password";
+    }
+
+    global.status = "password";
+    if (!global.dialog) {
+        dialog_setup(prompt);
+    } else {
+        if (global.dialog.prompt.text != prompt) {
+            dialog_opacity(0);
+            global.dialog = NULL;
+            dialog_setup(prompt);
+        } else {
+            dialog_opacity(1);
+        }
+    }
+
+    for (index = 0; dialog.bullet[index] || index < bullets; index++) {
+        if (!dialog.bullet[index]) {
+            dialog.bullet[index].sprite = Sprite(dialog.bullet_image);
+            dialog.bullet[index].sprite.SetX(dialog.entry.sprite.GetX() + 5 + (index % 21) * (dialog.bullet_image.GetWidth() + 2));
+            dialog.bullet[index].sprite.SetY(dialog.entry.sprite.GetY() + dialog.entry.image.GetHeight() / 2 - dialog.bullet_image.GetHeight() / 2);
+            dialog.bullet[index].sprite.SetZ(dialog.entry.sprite.GetZ() + 1);
+        }
+
+        if (index < bullets)
+            dialog.bullet[index].sprite.SetOpacity(1);
+        else
+            dialog.bullet[index].sprite.SetOpacity(0);
+      }
+}
+
+Plymouth.SetDisplayNormalFunction(display_normal_callback);
+Plymouth.SetDisplayPasswordFunction(display_password_callback);
+
+#----------------------------------------- Progress Bar --------------------------------
+
+progress_box.image = Image("progress_box.png");
+progress_box.sprite = Sprite(progress_box.image);
+progress_box.sprite.SetX(Window.GetX() + (Window.GetWidth() - progress_box.image.GetWidth()) / 2);
+progress_box.sprite.SetY(Window.GetHeight() - 50 - progress_box.image.GetHeight() / 2);
+
+progress_bar.original_image = Image("progress_bar.png");
+progress_bar.sprite = Sprite();
+progress_bar.sprite.SetX(progress_box.sprite.GetX() + (progress_box.image.GetWidth()  - progress_bar.original_image.GetWidth())  / 2);
+progress_bar.sprite.SetY(progress_box.sprite.GetY() + (progress_box.image.GetHeight() - progress_bar.original_image.GetHeight()) / 2);
+
+fun progress_callback(duration, progress)
+{
+    if (progress_bar.image.GetWidth() != Math.Int (progress_bar.original_image.GetWidth() * progress)) {
+      progress_bar.image = progress_bar.original_image.Scale(progress_bar.original_image.GetWidth() * progress, progress_bar.original_image.GetHeight());
+      progress_bar.sprite.SetImage(progress_bar.image);
+    }
+}
+
+Plymouth.SetBootProgressFunction(progress_callback);
+
+#----------------------------------------- Quit --------------------------------
+
+fun quit_callback()
+{
+    logo.sprite.SetOpacity(1);
+}
+
+Plymouth.SetQuitFunction(quit_callback);
+
+#----------------------------------------- Message --------------------------------
+
+message_sprites = [];
+message_sprite_count = 0;
+message_sprite_y = 10;
+
+fun display_message_callback(text)
+{
+    my_image = Image.Text(text, 1, 1, 1);
+    message_sprites[message_sprite_count] = Sprite(my_image);
+    message_sprites[message_sprite_count].SetPosition(10, message_sprite_y, 10000);
+    message_sprites[message_sprite_count].text = text;
+    message_sprite_count++;
+    message_sprite_y += my_image.GetHeight();
+}
+
+fun hide_message_callback (text)
+{
+    for (i = 0; i < message_sprite_count; i++) {
+        if (message_sprites[i].text == text)
+            message_sprites[i] = NULL;
+    }
+}
+
+Plymouth.SetDisplayMessageFunction(display_message_callback);
+Plymouth.SetHideMessageFunction(hide_message_callback);
+
+# vim: ts=4 sw=4 et

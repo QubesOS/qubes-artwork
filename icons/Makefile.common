@@ -1,0 +1,55 @@
+SIZE = $(firstword $(subst x, ,$(notdir $(shell pwd))))
+DIRS = apps devices
+ALL = \
+	devices/appvm-red.png \
+	devices/appvm-orange.png \
+	devices/appvm-yellow.png \
+	devices/appvm-green.png \
+	devices/appvm-gray.png \
+	devices/appvm-blue.png \
+	devices/appvm-purple.png \
+	devices/appvm-black.png \
+	devices/dispvm-red.png \
+	devices/dispvm-orange.png \
+	devices/dispvm-yellow.png \
+	devices/dispvm-green.png \
+	devices/dispvm-gray.png \
+	devices/dispvm-blue.png \
+	devices/dispvm-purple.png \
+	devices/dispvm-black.png \
+
+all: dirs $(ALL)
+.PHONY: all
+
+# some directories may be empty, so git won't check them out
+dirs:
+	mkdir -p $(DIRS)
+.PHONY: dirs
+
+devices/%-red.png:	COLOUR = 0xcc0000
+devices/%-orange.png:	COLOUR = 0xf57900
+devices/%-yellow.png:	COLOUR = 0xedd400
+devices/%-green.png:	COLOUR = 0x73d216
+devices/%-gray.png:	COLOUR = 0x555753
+devices/%-blue.png:	COLOUR = 0x3465a4
+devices/%-purple.png:	COLOUR = 0x75507b
+devices/%-black.png:	COLOUR = 0x000000
+
+devices/appvm-%.png:
+	../../bin/mkpadlock.py -s $(SIZE) -c $(COLOUR) $@
+
+devices/dispvm-%.png:
+	../../bin/mkpadlock.py -s $(SIZE) -c $(COLOUR) -D $@
+
+clean:
+	$(RM) $(ALL)
+.PHONY: clean
+
+MYDESTDIR = $(DESTDIR)/usr/share/icons/hicolor/$(notdir $(shell pwd))
+install:
+	install -d $(MYDESTDIR)
+	for dir in $(DIRS); do \
+		mkdir -p $(MYDESTDIR)/$$dir; \
+		cp -r $$dir/*.{png,svg} $(MYDESTDIR)/$$dir; \
+	done
+.PHONY: install

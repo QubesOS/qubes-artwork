@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Qubes Dark
+Description=Qubes plymouth theme, dark variant
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/qubes-dark
+ScriptFile=/usr/share/plymouth/themes/qubes-dark/qubes-dark.script
