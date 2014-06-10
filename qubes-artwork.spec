@@ -1,5 +1,5 @@
 Name:		qubes-artwork
-Version:	%{version}
+Version:	1
 Release:	1%{?dist}
 
 Summary:	Qubes branding

@@ -1,4 +1,3 @@
-VERSION = 1
 RELEASE ?= R2-rc1
 
 DIRS = \
@@ -27,6 +26,6 @@ install:
 .PHONY: install
 
 rpms:
-	rpmbuild --define "_rpmdir $(RPMDIR)" --define "version $(VERSION)" -bb qubes-artwork.spec
+	rpmbuild --define "_rpmdir $(RPMDIR)" -bb qubes-artwork.spec
 #	rpm --addsign $(RPMDIR)/x86_64/qubes-artwork-*$(VERSION)*.rpm
 .PHONY: rpms
