@@ -13,6 +13,12 @@ BuildRequires:	google-roboto-fonts
 BuildRequires:	qubes-utils >= 2.0.10
 BuildRequires:	netpbm-progs
 
+Provides:	system-logos
+Provides:	redhat-logos
+Provides:	fedora-logos
+Obsoletes:	redhat-logos
+Obsoletes:	fedora-logos
+
 # see backgrounds/Makefile
 #BuildRequires:	inkscape >= 0.91
 
