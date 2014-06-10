@@ -8,16 +8,20 @@ Group:		Qubes
 Vendor:		Invisible Things Lab
 URL:		https://www.qubes-os.org
 
-BuildRequires:	ImageMagick
-BuildRequires:	google-roboto-fonts
-BuildRequires:	qubes-utils >= 2.0.10
-BuildRequires:	netpbm-progs
-
 Provides:	system-logos
 Provides:	redhat-logos
 Provides:	fedora-logos
 Obsoletes:	redhat-logos
 Obsoletes:	fedora-logos
+
+Requires(post):	plymouth-scripts
+# plymouth-scripts should depend on plymouth-plugin-scripts, but it does not
+Requires(post):	plymouth-plugin-script
+
+BuildRequires:	ImageMagick
+BuildRequires:	google-roboto-fonts
+BuildRequires:	qubes-utils >= 2.0.10
+BuildRequires:	netpbm-progs
 
 # see backgrounds/Makefile
 #BuildRequires:	inkscape >= 0.91
@@ -42,13 +46,16 @@ make
 %install
 make install DESTDIR=%{buildroot}
 
+%post
+/usr/sbin/plymouth-set-default-theme qubes-dark || :
+
 #
 # triggers
 #
 
 %triggerin -- plymouth
 cp -f %{_datadir}/plymouth/plymouthd.defaults.qubes %{_datadir}/plymouth/plymouthd.defaults
-/usr/sbin/plymouth-set-default-theme qubes || :
+/usr/sbin/plymouth-set-default-theme qubes-dark || :
 
 #
 # files -- please keep them sorted
