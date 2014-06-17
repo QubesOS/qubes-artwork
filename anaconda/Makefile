@@ -12,9 +12,8 @@ splash.png: GEOMETRY = 128x128
 %.png: %.svg
 	convert -background none -geometry $(GEOMETRY) $< $@
 
-syslinux-vesa-splash.jpg: ../grub/splash.in.svg
-	$(MAKE) -C ../grub RELEASE=$(RELEASE) splash.rel.svg
-	convert ../grub/splash.rel.svg $@
+syslinux-vesa-splash.jpg: ../grub/splash.svg
+	convert ../grub/splash.svg $@
 
 %.rel.svg: %.in.svg
 	sed -e 's|@@RELEASE@@|$(RELEASE)|' $< > $@

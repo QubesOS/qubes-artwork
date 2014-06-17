@@ -476,6 +476,7 @@ cp -f %{_datadir}/plymouth/plymouthd.defaults.qubes %{_datadir}/plymouth/plymout
 
 # misc files
 /boot/grub/splash.xpm.gz
+/boot/grub2/themes/system/fireworks.png
 
 # python modules
 %{python_sitearch}/qubes/imggen.py

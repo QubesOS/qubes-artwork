@@ -122,16 +122,6 @@
      y="0"
      id="rect4445"
      style="fill:#558bad;fill-opacity:1;fill-rule:nonzero;stroke:none;display:inline" />
-  <text
-     x="19.816189"
-     y="54.893677"
-     id="text4478"
-     xml:space="preserve"
-     style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;opacity:0.9;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"><tspan
-       x="19.816189"
-       y="54.893677"
-       id="tspan4480"
-       style="font-size:36px;font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;font-family:Roboto Th;-inkscape-font-specification:Roboto Th Ultra-Light">Qubes OS @@RELEASE@@</tspan></text>
   <g
      transform="matrix(0.35918779,0,0,0.35918779,-76.13552,120.74995)"
      id="g3048">

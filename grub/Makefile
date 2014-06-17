@@ -1,20 +1,20 @@
 RELEASE ?= PRERELEASE
-ALL = $(patsubst %.in.svg,%.xpm.gz,$(wildcard *.in.svg))
+ALL = splash.xpm.gz fireworks.png
 
 all: $(ALL)
 .PHONY: all
 
-%.rel.svg: %.in.svg
-	sed -e 's|@@RELEASE@@|$(RELEASE)|' $< > $@
-
-%.xpm.gz: %.rel.svg
+$(ALL): splash.svg
 	convert $< $@
 
 clean:
-	$(RM) $(ALL) *.rel.svg
+	$(RM) $(ALL)
 .PHONY: clean
 
 install:
 	install -d $(DESTDIR)/boot/grub
-	install -t $(DESTDIR)/boot/grub -m 644 $(ALL)
+	install -t $(DESTDIR)/boot/grub -m 644 splash.xpm.gz
+
+	install -d $(DESTDIR)/boot/grub2/themes/system
+	install -t $(DESTDIR)/boot/grub2/themes/system/ -m 644 fireworks.png
 .PHONY: install
