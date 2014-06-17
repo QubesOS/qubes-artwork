@@ -1,13 +1,9 @@
-ALL = $(patsubst %.in.svg,%.png,$(wildcard *.in.svg)) padlock.png
-RELEASE ?= PRE
+ALL = $(patsubst %.svg,%.png,$(wildcard *.svg)) padlock.png
 
 all: $(ALL)
 .PHONY: all
 
-%.rel.svg: %.in.svg
-	sed -e 's|@@RELEASE@@|$(RELEASE)|' $< > $@
-
-%.png: %.rel.svg
+%.png: %.svg
 	convert -background none -antialias $< $@
 #	inkscape --export-png=$@ $<
 
