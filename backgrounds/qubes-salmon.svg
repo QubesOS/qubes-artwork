@@ -97,16 +97,6 @@
          inkscape:connector-curvature="0"
          id="path5113"
          style="opacity:0.12556057;fill:#ffffff;fill-opacity:1;stroke:none;display:inline" />
-      <text
-         x="1518.4304"
-         y="487.33578"
-         id="text5115"
-         xml:space="preserve"
-         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;opacity:0.9;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"><tspan
-           x="1518.4304"
-           y="487.33578"
-           id="tspan5117"
-           style="font-size:36px;font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;font-family:Roboto Th;-inkscape-font-specification:Roboto Th Ultra-Light">Qubes OS @@RELEASE@@</tspan></text>
     </g>
   </g>
 </svg>

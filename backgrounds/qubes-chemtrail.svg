@@ -137,16 +137,6 @@
            inkscape:connector-curvature="0"
            id="path4476"
            style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:0.9;color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:116.01034546;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
-        <text
-           x="-7152.6206"
-           y="1098.1959"
-           id="text4478"
-           xml:space="preserve"
-           style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;opacity:0.9;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"><tspan
-             x="-7152.6206"
-             y="1098.1959"
-             id="tspan4480"
-             style="font-size:36px;font-style:normal;font-variant:normal;font-weight:200;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;font-family:Roboto Th;-inkscape-font-specification:Roboto Th Ultra-Light">Qubes OS @@RELEASE@@</tspan></text>
       </g>
       <path
          d="m 958.62019,970.52099 a 15.314317,15.314317 0 0 0 -8.0206,2.0539 l -51.7317,29.85671 a 15.314317,15.314317 0 0 0 -7.6614,13.2609 l 0,59.7446 a 15.314317,15.314317 0 0 0 7.6614,13.2453 l 51.7317,29.8801 a 15.314317,15.314317 0 0 0 15.3149,0 l 51.73951,-29.8801 a 15.314317,15.314317 0 0 0 7.6536,-13.2453 l 0,-59.7446 a 15.314317,15.314317 0 0 0 -7.6536,-13.2609 l -51.73951,-29.85671 a 15.314317,15.314317 0 0 0 -7.2943,-2.0539 z m -0.164,33.76931 a 8.4228744,8.4228744 0 0 1 4.0143,1.1246 l 28.4586,16.4239 a 8.4228744,8.4228744 0 0 1 4.2095,7.2943 l 0,32.8634 a 8.4228744,8.4228744 0 0 1 -4.2095,7.2787 l -28.4586,16.4395 a 8.4228744,8.4228744 0 0 1 -8.419,0 l -28.4587,-16.4395 a 8.4228744,8.4228744 0 0 1 -4.2095,-7.2787 l 0,-32.8634 a 8.4228744,8.4228744 0 0 1 4.2095,-7.2943 l 28.4587,-16.4239 a 8.4228744,8.4228744 0 0 1 4.4047,-1.1246 z"

@@ -1,24 +1,10 @@
-RELEASE ?= PRERELEASE
-ALLSVG = $(patsubst %.in.svg,%.svg,$(wildcard *.in.svg))
-
 AUTHOR = Michał Kopczyński
 LICENCE = CC-BY-SA 4.0
-KDEGEOMETRIES = 1920x1080 1600x900
+KDEGEOMETRIES = 1920x1080 1600x900 1280x1024
+ALLSVG = $(wildcard *.svg)
 
-all: $(ALLSVG) kde
+all: kde
 .PHONY: all
-
-%.rel.svg: %.in.svg
-	sed -e 's|@@RELEASE@@|$(RELEASE)|' $< > $@
-
-# Inkscape 0.48.x cannot outline text when exporting to plain SVG without GUI.
-# The bug is fixed in trunk: https://bugs.launchpad.net/inkscape/+bug/903772.
-#
-# https://stackoverflow.com/questions/8422558/converting-text-into-path-svg-on-server
-# does not appear to work on fc20.
-%.svg: %.rel.svg
-	cp $< $@
-#	inkscape --export-plain-svg=$@ --export-text-to-path $<
 
 kde: $(ALLSVG)
 	mkdir -p $@
@@ -27,7 +13,6 @@ kde: $(ALLSVG)
 	done
 
 clean:
-	$(RM) $(ALLSVG) *.rel.svg
 	$(RM) -r kde
 .PHONY: clean
 

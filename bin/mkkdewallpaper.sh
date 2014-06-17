@@ -47,5 +47,5 @@ convert "${SRC}" -geometry x250 "${DST}"/contents/screenshot.png
 mkdir -p "${DST}"/contents/images
 for geometry in "$@"; do
 	echo "  resizing to ${geometry}" >&2
-	convert "${SRC}" -geometry "${geometry}" "${DST}"/contents/images/"${geometry}".png
+	convert "${SRC}" -geometry "${geometry}^" -gravity center -extent "${geometry}" "${DST}"/contents/images/"${geometry}".png
 done
