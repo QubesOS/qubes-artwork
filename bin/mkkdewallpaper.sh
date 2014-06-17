@@ -42,7 +42,7 @@ X-KDE-PluginInfo-License=${LICENCE}
 EOF
 
 mkdir -p "${DST}"/contents
-convert "${SRC}" -geometry x250 "${DST}"/contents/screenschot.png
+convert "${SRC}" -geometry x250 "${DST}"/contents/screenshot.png
 
 mkdir -p "${DST}"/contents/images
 for geometry in "$@"; do

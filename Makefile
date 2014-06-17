@@ -12,17 +12,17 @@ DIRS = \
 RPMDIR = rpm/
 
 all:
-	@for dir in $(DIRS); do $(MAKE) -C $$dir RELEASE=$(RELEASE) $@; done
+	@for dir in $(DIRS); do $(MAKE) -C $$dir RELEASE=$(RELEASE) $@ || exit 1; done
 .PHONY: all
 
 clean:
-	@for dir in $(DIRS); do $(MAKE) -C $$dir $@; done
+	@for dir in $(DIRS); do $(MAKE) -C $$dir $@ || exit 1; done
 	$(RM) -r $(RPMDIR) *.list
 .PHONY: clean
 
 install:
 	install -d $(DESTDIR)
-	@for dir in $(DIRS); do $(MAKE) -C $$dir DESTDIR=$(DESTDIR) $@; done
+	@for dir in $(DIRS); do $(MAKE) -C $$dir DESTDIR=$(DESTDIR) $@ || exit 1; done
 .PHONY: install
 
 rpms:

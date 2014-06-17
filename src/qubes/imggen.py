@@ -74,7 +74,6 @@ def make_padlock(dst, colour, size=qubes.imgconverter.ICON_MAXSIZE, disp=False):
             cr.close_path()
 
         cr.set_source_rgb(*qubes.imgconverter.hex_to_float('0xcc0000')) # tango's red
-        cr.set_line_width(.0625 * size)
         cr.set_line_width(.0500 * size)
         cr.set_line_join(cairo.LINE_JOIN_ROUND)
         cr.stroke_preserve()

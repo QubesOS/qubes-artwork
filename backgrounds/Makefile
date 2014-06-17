@@ -22,7 +22,9 @@ all: $(ALLSVG) kde
 
 kde: $(ALLSVG)
 	mkdir -p $@
-	for svg in $(ALLSVG); do ../bin/mkkdewallpaper.sh $@ $$svg "$(AUTHOR)" "$(LICENCE)" $(KDEGEOMETRIES); done
+	for svg in $(ALLSVG); do \
+		../bin/mkkdewallpaper.sh $@ $$svg "$(AUTHOR)" "$(LICENCE)" $(KDEGEOMETRIES) || exit 1; \
+	done
 
 clean:
 	$(RM) $(ALLSVG) *.rel.svg
@@ -35,7 +37,7 @@ install:
 
 	install -d $(DESTDIR)/usr/share/backgrounds/xfce
 	for svg in $(notdir $(ALLSVG)); do \
-		ln -s ../qubes/$$svg $(DESTDIR)/usr/share/backgrounds/xfce/; \
+		ln -s ../qubes/$$svg $(DESTDIR)/usr/share/backgrounds/xfce/ || exit 1; \
 	done
 
 	install -d $(DESTDIR)/usr/share/wallpapers
