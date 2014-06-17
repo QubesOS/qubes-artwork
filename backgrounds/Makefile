@@ -1,6 +1,6 @@
 AUTHOR = Michał Kopczyński
 LICENCE = CC-BY-SA 4.0
-KDEGEOMETRIES = 1920x1080 1600x900 1280x1024
+KDEGEOMETRIES = 2048x1536 1920x1080 1600x900 1280x1024
 ALLSVG = $(wildcard *.svg)
 
 all: kde
@@ -27,5 +27,9 @@ install:
 
 	install -d $(DESTDIR)/usr/share/wallpapers
 	cp -r kde/* $(DESTDIR)/usr/share/wallpapers
+
+	install -d $(DESTDIR)/usr/share/backgrounds/images
+	ln -s ../wallpapers/Qubes_Steel/contents/images/2048x1536.png $(DESTDIR)/usr/share/backgrounds/default.png
+	ln -s ../../wallpapers/Qubes_Steel/contents/images/2048x1536.png $(DESTDIR)/usr/share/backgrounds/images/default.png
 
 .PHONY: install

@@ -11,8 +11,10 @@ URL:		https://www.qubes-os.org
 Provides:	system-logos
 Provides:	redhat-logos
 Provides:	fedora-logos
+Provides:	desktop-backgrounds-compat
 Obsoletes:	redhat-logos
 Obsoletes:	fedora-logos
+Obsoletes:	desktop-backgrounds-compat
 
 Requires(post):	plymouth-scripts
 # plymouth-scripts should depend on plymouth-plugin-scripts, but it does not
@@ -319,6 +321,7 @@ cp -f %{_datadir}/plymouth/plymouthd.defaults.qubes %{_datadir}/plymouth/plymout
 %{_datadir}/backgrounds/qubes/qubes-wasp.svg
 %{_datadir}/backgrounds/qubes/qubes-wild-strawberry.svg
 %{_datadir}/backgrounds/qubes/qubes-wine.svg
+
 %{_datadir}/backgrounds/xfce/qubes-blackcurrant.svg
 %{_datadir}/backgrounds/xfce/qubes-chemtrail.svg
 %{_datadir}/backgrounds/xfce/qubes-dawn.svg
