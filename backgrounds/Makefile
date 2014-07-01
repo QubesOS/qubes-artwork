@@ -29,7 +29,7 @@ install:
 	cp -r kde/* $(DESTDIR)/usr/share/wallpapers
 
 	install -d $(DESTDIR)/usr/share/backgrounds/images
-	ln -s ../wallpapers/Qubes_Steel/contents/images/2048x1536.png $(DESTDIR)/usr/share/backgrounds/default.png
-	ln -s ../../wallpapers/Qubes_Steel/contents/images/2048x1536.png $(DESTDIR)/usr/share/backgrounds/images/default.png
+	ln -s ../wallpapers/Qubes_Steel/contents/images/1920x1080.png $(DESTDIR)/usr/share/backgrounds/default.png
+	ln -s ../../wallpapers/Qubes_Steel/contents/images/1920x1080.png $(DESTDIR)/usr/share/backgrounds/images/default.png
 
 .PHONY: install
