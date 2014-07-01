@@ -1,6 +1,6 @@
 Name:		qubes-artwork
 Version:	1
-Release:	1%{?dist}
+Release:	2%{?dist}
 
 Summary:	Qubes branding
 License:	CC BY-SA 4.0 International, GPL v2
@@ -11,9 +11,11 @@ URL:		https://www.qubes-os.org
 Provides:	system-logos
 Provides:	redhat-logos
 Provides:	fedora-logos
+Provides:	qubes-logos
 Provides:	desktop-backgrounds-compat
 Obsoletes:	redhat-logos
 Obsoletes:	fedora-logos
+Obsoletes:	qubes-logos
 Obsoletes:	desktop-backgrounds-compat
 
 Requires(post):	plymouth-scripts
