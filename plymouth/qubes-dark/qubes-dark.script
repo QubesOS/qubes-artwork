@@ -1,7 +1,5 @@
-#Window.SetBackgroundTopColor(0.263, 0.294, 0.325);
-#Window.SetBackgroundBottomColor(0.263, 0.294, 0.325);
-Window.SetBackgroundTopColor(0, 0, 0);
-Window.SetBackgroundBottomColor(0, 0, 0);
+Window.SetBackgroundTopColor(0.263, 0.294, 0.325);
+Window.SetBackgroundBottomColor(0.179, 0.200, 0.221);
 
 logo.image = Image("qubes-logo-solid.png");
 logo.sprite = Sprite(logo.image);
