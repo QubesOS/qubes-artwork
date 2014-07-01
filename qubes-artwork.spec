@@ -21,6 +21,7 @@ Obsoletes:	desktop-backgrounds-compat
 Requires(post):	plymouth-scripts
 # plymouth-scripts should depend on plymouth-plugin-scripts, but it does not
 Requires(post):	plymouth-plugin-script
+Requires(post):	dracut
 
 BuildRequires:	ImageMagick
 BuildRequires:	google-roboto-fonts
@@ -51,14 +52,14 @@ make
 make install DESTDIR=%{buildroot}
 
 %post
-/usr/sbin/plymouth-set-default-theme qubes-dark || :
+/usr/sbin/plymouth-set-default-theme qubes-dark && \
+/usr/sbin/dracut -f || :
 
 #
 # triggers
 #
 
 %triggerin -- plymouth
-cp -f %{_datadir}/plymouth/plymouthd.defaults.qubes %{_datadir}/plymouth/plymouthd.defaults
 /usr/sbin/plymouth-set-default-theme qubes-dark || :
 
 #
@@ -469,6 +470,7 @@ cp -f %{_datadir}/plymouth/plymouthd.defaults.qubes %{_datadir}/plymouth/plymout
 %{_datadir}/firstboot/themes/qubes/workstation.png
 
 # plymouth
+%{_sysconfdir}/dracut.conf.d/plymouth-missing-fonts.conf
 %{_datadir}/plymouth/themes/qubes-dark/bullet.png
 %{_datadir}/plymouth/themes/qubes-dark/entry.png
 %{_datadir}/plymouth/themes/qubes-dark/padlock.png
