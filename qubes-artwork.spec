@@ -1,6 +1,9 @@
+
+%{!?version: %define version %(cat version)}
+
 Name:		qubes-artwork
-Version:	1
-Release:	2%{?dist}
+Version:	%{version}
+Release:	1%{?dist}
 
 Summary:	Qubes branding
 License:	CC BY-SA 4.0 International, GPL v2
