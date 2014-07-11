@@ -28,8 +28,8 @@ dirs:
 
 devices/%-red.png:	COLOUR = 0xcc0000
 devices/%-orange.png:	COLOUR = 0xf57900
-devices/%-yellow.png:	COLOUR = 0xedd400
-devices/%-green.png:	COLOUR = 0x73d216
+devices/%-yellow.png:	COLOUR = 0xc4a000
+devices/%-green.png:	COLOUR = 0x4e9a06
 devices/%-gray.png:	COLOUR = 0x555753
 devices/%-blue.png:	COLOUR = 0x3465a4
 devices/%-purple.png:	COLOUR = 0x75507b
