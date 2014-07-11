@@ -75,6 +75,7 @@ make install DESTDIR=%{buildroot}
 %doc HACKING
 
 # icons
+%{_datadir}/icons/hicolor/16x16/apps/qubes-logo-icon.png
 %{_datadir}/icons/hicolor/16x16/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/16x16/devices/appvm-black.png
 %{_datadir}/icons/hicolor/16x16/devices/appvm-blue.png
@@ -96,6 +97,8 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/16x16/places/start-here-qubes-green.png
 %{_datadir}/icons/hicolor/16x16/places/start-here-qubes-red.png
 %{_datadir}/icons/hicolor/16x16/places/start-here-qubes-yellow.png
+%{_datadir}/icons/hicolor/22x22/apps/qubes-logo-icon.png
+%{_datadir}/icons/hicolor/22x22/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/22x22/devices/appvm-black.png
 %{_datadir}/icons/hicolor/22x22/devices/appvm-blue.png
 %{_datadir}/icons/hicolor/22x22/devices/appvm-gray.png
@@ -112,6 +115,8 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/22x22/devices/dispvm-purple.png
 %{_datadir}/icons/hicolor/22x22/devices/dispvm-red.png
 %{_datadir}/icons/hicolor/22x22/devices/dispvm-yellow.png
+%{_datadir}/icons/hicolor/24x24/apps/qubes-logo-icon.png
+%{_datadir}/icons/hicolor/24x24/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/24x24/devices/appvm-black.png
 %{_datadir}/icons/hicolor/24x24/devices/appvm-blue.png
 %{_datadir}/icons/hicolor/24x24/devices/appvm-gray.png
@@ -128,6 +133,7 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/24x24/devices/dispvm-purple.png
 %{_datadir}/icons/hicolor/24x24/devices/dispvm-red.png
 %{_datadir}/icons/hicolor/24x24/devices/dispvm-yellow.png
+%{_datadir}/icons/hicolor/32x32/apps/qubes-logo-icon.png
 %{_datadir}/icons/hicolor/32x32/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/32x32/devices/appvm-black.png
 %{_datadir}/icons/hicolor/32x32/devices/appvm-blue.png
@@ -149,6 +155,8 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/32x32/places/start-here-qubes-green.png
 %{_datadir}/icons/hicolor/32x32/places/start-here-qubes-red.png
 %{_datadir}/icons/hicolor/32x32/places/start-here-qubes-yellow.png
+%{_datadir}/icons/hicolor/36x36/apps/qubes-logo-icon.png
+%{_datadir}/icons/hicolor/36x36/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/36x36/devices/appvm-black.png
 %{_datadir}/icons/hicolor/36x36/devices/appvm-blue.png
 %{_datadir}/icons/hicolor/36x36/devices/appvm-gray.png
@@ -165,6 +173,7 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/36x36/devices/dispvm-purple.png
 %{_datadir}/icons/hicolor/36x36/devices/dispvm-red.png
 %{_datadir}/icons/hicolor/36x36/devices/dispvm-yellow.png
+%{_datadir}/icons/hicolor/48x48/apps/qubes-logo-icon.png
 %{_datadir}/icons/hicolor/48x48/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/48x48/devices/appvm-black.png
 %{_datadir}/icons/hicolor/48x48/devices/appvm-blue.png
@@ -186,6 +195,7 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/48x48/places/start-here-qubes-green.png
 %{_datadir}/icons/hicolor/48x48/places/start-here-qubes-red.png
 %{_datadir}/icons/hicolor/48x48/places/start-here-qubes-yellow.png
+%{_datadir}/icons/hicolor/64x64/apps/qubes-logo-icon.png
 %{_datadir}/icons/hicolor/64x64/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/64x64/devices/appvm-black.png
 %{_datadir}/icons/hicolor/64x64/devices/appvm-blue.png
@@ -207,6 +217,8 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/64x64/places/start-here-qubes-green.png
 %{_datadir}/icons/hicolor/64x64/places/start-here-qubes-red.png
 %{_datadir}/icons/hicolor/64x64/places/start-here-qubes-yellow.png
+%{_datadir}/icons/hicolor/72x72/apps/qubes-logo-icon.png
+%{_datadir}/icons/hicolor/72x72/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/72x72/devices/appvm-black.png
 %{_datadir}/icons/hicolor/72x72/devices/appvm-blue.png
 %{_datadir}/icons/hicolor/72x72/devices/appvm-gray.png
@@ -223,6 +235,8 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/72x72/devices/dispvm-purple.png
 %{_datadir}/icons/hicolor/72x72/devices/dispvm-red.png
 %{_datadir}/icons/hicolor/72x72/devices/dispvm-yellow.png
+%{_datadir}/icons/hicolor/96x96/apps/qubes-logo-icon.png
+%{_datadir}/icons/hicolor/96x96/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/96x96/devices/appvm-black.png
 %{_datadir}/icons/hicolor/96x96/devices/appvm-blue.png
 %{_datadir}/icons/hicolor/96x96/devices/appvm-gray.png
@@ -239,6 +253,8 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/96x96/devices/dispvm-purple.png
 %{_datadir}/icons/hicolor/96x96/devices/dispvm-red.png
 %{_datadir}/icons/hicolor/96x96/devices/dispvm-yellow.png
+%{_datadir}/icons/hicolor/128x128/apps/qubes-logo-icon.png
+%{_datadir}/icons/hicolor/128x128/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/128x128/devices/appvm-black.png
 %{_datadir}/icons/hicolor/128x128/devices/appvm-blue.png
 %{_datadir}/icons/hicolor/128x128/devices/appvm-gray.png
@@ -255,6 +271,8 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/128x128/devices/dispvm-purple.png
 %{_datadir}/icons/hicolor/128x128/devices/dispvm-red.png
 %{_datadir}/icons/hicolor/128x128/devices/dispvm-yellow.png
+%{_datadir}/icons/hicolor/192x192/apps/qubes-logo-icon.png
+%{_datadir}/icons/hicolor/192x192/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/192x192/devices/appvm-black.png
 %{_datadir}/icons/hicolor/192x192/devices/appvm-blue.png
 %{_datadir}/icons/hicolor/192x192/devices/appvm-gray.png
@@ -271,6 +289,8 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/192x192/devices/dispvm-purple.png
 %{_datadir}/icons/hicolor/192x192/devices/dispvm-red.png
 %{_datadir}/icons/hicolor/192x192/devices/dispvm-yellow.png
+%{_datadir}/icons/hicolor/256x256/apps/qubes-logo-icon.png
+%{_datadir}/icons/hicolor/256x256/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/256x256/devices/appvm-black.png
 %{_datadir}/icons/hicolor/256x256/devices/appvm-blue.png
 %{_datadir}/icons/hicolor/256x256/devices/appvm-gray.png
@@ -287,6 +307,8 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/256x256/devices/dispvm-purple.png
 %{_datadir}/icons/hicolor/256x256/devices/dispvm-red.png
 %{_datadir}/icons/hicolor/256x256/devices/dispvm-yellow.png
+%{_datadir}/icons/hicolor/512x512/apps/qubes-logo-icon.png
+%{_datadir}/icons/hicolor/512x512/apps/qubes-manager.png
 %{_datadir}/icons/hicolor/512x512/devices/appvm-black.png
 %{_datadir}/icons/hicolor/512x512/devices/appvm-blue.png
 %{_datadir}/icons/hicolor/512x512/devices/appvm-gray.png

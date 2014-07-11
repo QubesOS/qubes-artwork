@@ -1,6 +1,8 @@
 SIZE = $(firstword $(subst x, ,$(notdir $(shell pwd))))
 DIRS = apps devices places
 ALL = \
+	apps/qubes-logo-icon.png \
+	apps/qubes-manager.png \
 	devices/appvm-red.png \
 	devices/appvm-orange.png \
 	devices/appvm-yellow.png \
@@ -25,6 +27,12 @@ all: dirs $(ALL)
 dirs:
 	mkdir -p $(DIRS)
 .PHONY: dirs
+
+apps/qubes-logo-icon.png:
+	convert -background none -geometry $(SIZE) ../../logo/qubes-logo-blue.svg $@
+
+apps/qubes-manager.png: apps/qubes-logo-icon.png
+	ln -s $(notdir $<) $@
 
 devices/%-red.png:	COLOUR = 0xcc0000
 devices/%-orange.png:	COLOUR = 0xf57900
