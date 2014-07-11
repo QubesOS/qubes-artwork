@@ -1,5 +1,5 @@
 SIZE = $(firstword $(subst x, ,$(notdir $(shell pwd))))
-DIRS = apps devices
+DIRS = apps devices places
 ALL = \
 	devices/appvm-red.png \
 	devices/appvm-orange.png \

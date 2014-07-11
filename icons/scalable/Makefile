@@ -1,4 +1,4 @@
-DIRS = apps
+DIRS = places
 
 all:
 .PHONY: all
