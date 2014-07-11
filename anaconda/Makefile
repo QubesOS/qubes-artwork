@@ -15,11 +15,8 @@ splash.png: GEOMETRY = 128x128
 syslinux-vesa-splash.jpg: ../grub/splash.svg
 	convert ../grub/splash.svg $@
 
-%.rel.svg: %.in.svg
-	sed -e 's|@@RELEASE@@|$(RELEASE)|' $< > $@
-
-syslinux-splash.png: syslinux-splash.rel.svg
-	convert $< -colors 12 $@
+syslinux-splash.png: syslinux-splash.svg
+	convert $< -colors 12 -geometry "640x480!" $@
 
 # this part requires syslinux-perl
 # (not in BuildRequires, but are we using syslinux?)
@@ -36,7 +33,7 @@ progress_first-lowres.png: splash.png
 	cp $< $@
 
 clean:
-	$(RM) $(ALL) syslinux-splash.pnm splash.lss *.rel.svg
+	$(RM) $(ALL) syslinux-splash.{pnm,png} splash.lss *.rel.svg
 .PHONY: clean
 
 install:
