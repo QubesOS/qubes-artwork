@@ -21,11 +21,14 @@ fun dialog_setup(text)
 {
     local.prompt;
     local.entry;
-    local.lock;
+    local.aemsecret;
     
     prompt.text = text;
     prompt.image = Image.Text(text, 1, 1, 1);
-    lock.image = Image("padlock.png");
+
+    # Try to load AEM secret image, if the file doesn't exists, plymouth shouldn't display anything
+    aemsecret.image = Image("antievilmaid_secret.png");
+
     entry.image = Image("entry.png");
     
     prompt.sprite = Sprite(prompt.image);
@@ -39,14 +42,14 @@ fun dialog_setup(text)
     entry.sprite.SetY(prompt.sprite.GetY() + prompt.image.GetHeight() + 16);
     entry.sprite.SetZ(1);
     
-    lock.sprite = Sprite(lock.image);
-    lock.sprite.SetX(entry.sprite.GetX() + (entry.image.GetWidth() - lock.image.GetWidth()) / 2);
-    lock.sprite.SetY(entry.sprite.GetY() + entry.image.GetHeight() + 16);
-    lock.sprite.SetZ(1);
+    aemsecret.sprite = Sprite(aemsecret.image);
+    aemsecret.sprite.SetX(entry.sprite.GetX() + (entry.image.GetWidth() - aemsecret.image.GetWidth()) / 2);
+    aemsecret.sprite.SetY(entry.sprite.GetY() + entry.image.GetHeight() + 16);
+    aemsecret.sprite.SetZ(1);
     
     global.dialog.prompt = prompt;
     global.dialog.entry = entry;
-    global.dialog.lock = lock;
+    global.dialog.aemsecret = aemsecret;
     global.dialog.bullet_image = Image("bullet.png");
     dialog_opacity(1);
 }
@@ -54,7 +57,7 @@ fun dialog_setup(text)
 fun dialog_opacity(opacity)
 {
     dialog.prompt.sprite.SetOpacity(opacity);
-    dialog.lock.sprite.SetOpacity(opacity);
+    dialog.aemsecret.sprite.SetOpacity(opacity);
     dialog.entry.sprite.SetOpacity(opacity);
     for (index = 0; dialog.bullet[index]; index++) {
         dialog.bullet[index].sprite.SetOpacity(opacity);
