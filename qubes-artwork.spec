@@ -57,6 +57,8 @@ make install DESTDIR=%{buildroot}
 %post
 /usr/sbin/plymouth-set-default-theme qubes-dark && \
 /usr/sbin/dracut -f || :
+xdg-icon-resource forceupdate --theme hicolor || :
+xdg-icon-resource forceupdate --theme oxygen || :
 
 #
 # triggers
@@ -330,10 +332,30 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/icons/hicolor/scalable/places/start-here-qubes-red.svg
 %{_datadir}/icons/hicolor/scalable/places/start-here-qubes-yellow.svg
 %{_datadir}/icons/oxygen/16x16/places/start-here-qubes.png
+%{_datadir}/icons/oxygen/16x16/places/start-here-qubes-blue.png
+%{_datadir}/icons/oxygen/16x16/places/start-here-qubes-green.png
+%{_datadir}/icons/oxygen/16x16/places/start-here-qubes-red.png
+%{_datadir}/icons/oxygen/16x16/places/start-here-qubes-yellow.png
 %{_datadir}/icons/oxygen/32x32/places/start-here-qubes.png
+%{_datadir}/icons/oxygen/32x32/places/start-here-qubes-blue.png
+%{_datadir}/icons/oxygen/32x32/places/start-here-qubes-green.png
+%{_datadir}/icons/oxygen/32x32/places/start-here-qubes-red.png
+%{_datadir}/icons/oxygen/32x32/places/start-here-qubes-yellow.png
 %{_datadir}/icons/oxygen/48x48/places/start-here-qubes.png
+%{_datadir}/icons/oxygen/48x48/places/start-here-qubes-blue.png
+%{_datadir}/icons/oxygen/48x48/places/start-here-qubes-green.png
+%{_datadir}/icons/oxygen/48x48/places/start-here-qubes-red.png
+%{_datadir}/icons/oxygen/48x48/places/start-here-qubes-yellow.png
 %{_datadir}/icons/oxygen/64x64/places/start-here-qubes.png
+%{_datadir}/icons/oxygen/64x64/places/start-here-qubes-blue.png
+%{_datadir}/icons/oxygen/64x64/places/start-here-qubes-green.png
+%{_datadir}/icons/oxygen/64x64/places/start-here-qubes-red.png
+%{_datadir}/icons/oxygen/64x64/places/start-here-qubes-yellow.png
 %{_datadir}/icons/oxygen/scalable/places/start-here-qubes.svg
+%{_datadir}/icons/oxygen/scalable/places/start-here-qubes-blue.svg
+%{_datadir}/icons/oxygen/scalable/places/start-here-qubes-green.svg
+%{_datadir}/icons/oxygen/scalable/places/start-here-qubes-red.svg
+%{_datadir}/icons/oxygen/scalable/places/start-here-qubes-yellow.svg
 
 # backgrounds
 %{_datadir}/backgrounds/qubes/qubes-blackcurrant.svg
