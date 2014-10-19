@@ -31,6 +31,7 @@ BuildRequires:	ImageMagick
 BuildRequires:	google-roboto-fonts
 BuildRequires:	qubes-utils >= 2.0.10
 BuildRequires:	netpbm-progs
+BuildRequires:	pycairo
 
 # see backgrounds/Makefile
 #BuildRequires:	inkscape >= 0.91
