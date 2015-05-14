@@ -1,4 +1,5 @@
 *.py[co]
 rpm/
+pkgs/
 qubes-artwork-1
 *.list
