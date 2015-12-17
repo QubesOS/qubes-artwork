@@ -2,7 +2,7 @@
 
 # The Qubes OS Project, http://www.qubes-os.org
 #
-# Copyright (C) 2014  Wojciech Porczyk <wojciech@porczyk.eu>
+# Copyright (C) 2014-2015  Wojtek Porczyk <woju@invisiblethingslab.com>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -22,14 +22,8 @@ import argparse
 import os
 import sys
 
-import qubes.imgconverter
-
-try:
-    import qubes.imggen as imggen
-except ImportError:
-    # we are not installed, probably still in repo
-    sys.path.insert(0, os.path.join(os.path.split(__file__)[0], '../src/qubes/'))
-    import imggen
+import qubesimgconverter
+import qubesimgconverter.imggen
 
 _parser = argparse.ArgumentParser()
 _parser.add_argument('-s', '--size', type=int,
@@ -41,14 +35,15 @@ _parser.add_argument('-D', '--dispvm', action='store_true',
 _parser.add_argument('file', metavar='FILE.png',
     help='Destination filename (PNG)')
 _parser.set_defaults(
-    size=qubes.imgconverter.ICON_MAXSIZE,
+    size=qubesimgconverter.ICON_MAXSIZE,
     colour='0x3465a4',
     dispvm=False
 )
 
 def main():
     args = _parser.parse_args()
-    imggen.make_padlock(args.file, args.colour, size=args.size, disp=args.dispvm)
+    qubesimgconverter.imggen.make_padlock(
+        args.file, args.colour, size=args.size, disp=args.dispvm)
 
 if __name__ == '__main__':
     main()

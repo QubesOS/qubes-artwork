@@ -32,7 +32,7 @@ Requires(post):	dracut
 
 BuildRequires:	ImageMagick
 BuildRequires:	google-roboto-fonts
-BuildRequires:	qubes-utils >= 2.0.10
+BuildRequires:	qubes-utils >= 3.9.0
 BuildRequires:	netpbm-progs
 BuildRequires:	pycairo
 
@@ -563,11 +563,6 @@ xdg-icon-resource forceupdate --theme oxygen || :
 # misc files
 /boot/grub/splash.xpm.gz
 /boot/grub2/themes/system/fireworks.png
-
-# python modules
-%{python_sitearch}/qubes/imggen.py
-%{python_sitearch}/qubes/imggen.pyc
-%{python_sitearch}/qubes/imggen.pyo
 
 %files efi
 /boot/efi/EFI/qubes/splash.png

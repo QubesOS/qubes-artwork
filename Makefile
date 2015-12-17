@@ -6,8 +6,7 @@ DIRS = \
 	grub \
 	icons \
 	firstboot/qubes \
-	plymouth \
-	src/qubes
+	plymouth
 
 RPMDIR = rpm/
 
