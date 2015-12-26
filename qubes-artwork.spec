@@ -21,6 +21,7 @@ Obsoletes:	fedora-logos
 Obsoletes:	qubes-logos
 Obsoletes:	desktop-backgrounds-compat
 
+Requires(post):	plymouth
 Requires(post):	plymouth-scripts
 # plymouth-scripts should depend on plymouth-plugin-scripts, but it does not
 Requires(post):	plymouth-plugin-script
