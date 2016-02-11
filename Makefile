@@ -23,7 +23,14 @@ clean:
 install:
 	install -d $(DESTDIR)
 	@for dir in $(DIRS); do $(MAKE) -C $$dir DESTDIR=$(DESTDIR) $@ || exit 1; done
+	@# temporary theme
+	install -D -m 0644 anaconda/syslinux-splash.png \
+		$(DESTDIR)/boot/efi/EFI/qubes/splash.png
+	install -D -m 0644 plymouth/qubes-dark/qubes-logo-solid.png \
+		$(DESTDIR)/boot/efi/EFI/qubes/icons/os_qubes.png
+
 .PHONY: install
+
 
 rpms:
 	rpmbuild --define "_rpmdir $(RPMDIR)" -bb qubes-artwork.spec

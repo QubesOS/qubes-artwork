@@ -43,6 +43,12 @@ BuildRequires:	pycairo
 %description
 Qubes-branded backgrounds, icons, themes.
 
+%package efi
+Summary:    Qubes OS theme for EFI boot manager (rEFInd)
+
+%description efi
+Qubes OS theme for rEFInd boot manager
+
 %prep
 rm -rf %{name}-%{version}
 ln -sf . %{name}-%{version}
@@ -558,6 +564,9 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %{python_sitearch}/qubes/imggen.pyc
 %{python_sitearch}/qubes/imggen.pyo
 
+%files efi
+/boot/efi/EFI/qubes/splash.png
+/boot/efi/EFI/qubes/icons/os_qubes.png
 
 %changelog
 
