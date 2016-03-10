@@ -65,7 +65,7 @@ make install DESTDIR=%{buildroot}
 
 %post
 /usr/sbin/plymouth-set-default-theme qubes-dark && \
-/usr/sbin/dracut -f || :
+PATH="/sbin:$PATH" dracut -f || :
 xdg-icon-resource forceupdate --theme hicolor || :
 xdg-icon-resource forceupdate --theme oxygen || :
 
