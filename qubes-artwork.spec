@@ -10,6 +10,7 @@ License:	CC BY-SA 4.0 International, GPL v2
 Group:		Qubes
 Vendor:		Invisible Things Lab
 URL:		https://www.qubes-os.org
+BuildArch:	noarch
 
 Provides:	system-logos
 Provides:	redhat-logos
