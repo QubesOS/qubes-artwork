@@ -1,4 +1,5 @@
 
+%global debug_package %{nil}
 %{!?version: %define version %(cat version)}
 
 Name:		qubes-artwork
