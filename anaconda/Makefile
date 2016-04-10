@@ -43,6 +43,9 @@ install:
 	mkdir -p $(DESTDIR)/usr/share/anaconda/pixmaps
 	install -m 0644 -t $(DESTDIR)/usr/share/anaconda/pixmaps \
 		$(ALL) \
-		anaconda_header.png
+		anaconda_header.png \
+		sidebar-bg.png \
+		sidebar-logo.png \
+		topbar-bg.png
 
 .PHONY: install

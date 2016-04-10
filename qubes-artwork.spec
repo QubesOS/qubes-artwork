@@ -4,7 +4,7 @@
 
 Name:		qubes-artwork
 Version:	%{version}
-Release:	1%{?dist}
+Release:	2%{?dist}
 
 Summary:	Qubes branding
 License:	CC BY-SA 4.0 International, GPL v2
@@ -537,8 +537,11 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %{_datadir}/anaconda/pixmaps/anaconda_header.png
 %{_datadir}/anaconda/pixmaps/progress_first-lowres.png
 %{_datadir}/anaconda/pixmaps/progress_first.png
+%{_datadir}/anaconda/pixmaps/sidebar-bg.png
+%{_datadir}/anaconda/pixmaps/sidebar-logo.png
 %{_datadir}/anaconda/pixmaps/splash.png
 %{_datadir}/anaconda/pixmaps/syslinux-vesa-splash.jpg
+%{_datadir}/anaconda/pixmaps/topbar-bg.png
 
 # firstboot
 %{_datadir}/firstboot/themes/qubes/firstboot-left.png
