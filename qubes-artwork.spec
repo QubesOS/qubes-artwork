@@ -32,7 +32,7 @@ Requires(post):	dracut
 
 BuildRequires:	ImageMagick
 BuildRequires:	google-roboto-fonts
-BuildRequires:	qubes-utils >= 3.9.0
+BuildRequires:	python3-qubesimgconverter
 BuildRequires:	netpbm-progs
 BuildRequires:	pycairo
 
@@ -40,7 +40,6 @@ BuildRequires:	pycairo
 #BuildRequires:	inkscape >= 0.91
 
 %define _builddir %(pwd)
-%{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 %description
 Qubes-branded backgrounds, icons, themes.
