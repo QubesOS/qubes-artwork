@@ -1,9 +1,7 @@
-
 %global debug_package %{nil}
-%{!?version: %define version %(cat version)}
 
 Name:		qubes-artwork
-Version:	%{version}
+Version:	@VERSION@
 Release:	2%{?dist}
 
 Summary:	Qubes branding
@@ -43,7 +41,11 @@ BuildRequires:	pycairo
 # see backgrounds/Makefile
 #BuildRequires:	inkscape >= 0.91
 
+Source0: %{name}-%{version}.tar.gz
+
+%if 0%{?qubes_builder}
 %define _builddir %(pwd)
+%endif
 
 %description
 Qubes-branded backgrounds, icons, themes.
@@ -55,9 +57,7 @@ Summary:    Qubes OS theme for EFI boot manager (rEFInd)
 Qubes OS theme for rEFInd boot manager
 
 %prep
-rm -rf %{name}-%{version}
-ln -sf . %{name}-%{version}
-%setup -T -D
+%setup -q
 make clean
 mkdir -p %{_rpmdir}
 
