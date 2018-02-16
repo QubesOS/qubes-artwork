@@ -1,0 +1,85 @@
+These files are used for Apple's EFI boot selector to show the
+Qubes OS text and icon during Apple's Boot Selection process 
+(hold down OPTION KEY at startup).  
+
+These files are installed at the following location:
+
+    /usr/share/pixmaps/bootloader/apple/*
+
+A basic description of the files are as follows:
+
+* qubes, qubes-install, qubes-rescue
+  These directories hold a list of three files each pre-rendered
+  for macOS machines.
+
+    disk_label
+    disk_label_2x
+    disk_label.contentDetails
+
+  The first two files, disk_label and disk_label_2x, are special
+  image bitmaps of 12px high and various widths saved in macOS
+  proprietary "label" format.  The _2x version are high DPI 
+  Retina versions.
+
+  By default, macOS shows bootable partitions as "EFI Boot" with
+  a generic USB drive icon.  These files rename the text.
+
+  The EFI installer copies it to the correct locations, typically:
+  
+    /boot/efi/EFI/qubes/
+    /boot/efi/System/Library/CoreServices/
+  
+  You can generate these by properly setting the 
+  SystemVersion.plist for your target boot partition and then 
+  running on macOS:
+
+    sudo bless --folder <path-to-partition>/System/Library/CoreServices \
+      --label "<matching label name>"
+  
+  Where <matching label name> must match the product Version
+  listed in the SystemVersion.plist file.  The result will be 
+  the three files listed above, but as hidden files with the 
+  "." prefix.
+
+  To keep it simple for installation of artwork, the files were
+  renamed to non-hidden files and placed into three directories.
+
+  There are three sets of disk_labels in this folder, used for 
+  different installations of Qubes OS:
+
+    qubes/ :
+    These are labelled "Qubes OS" and used during macOS installs.
+
+    qubes-install/ :
+    These are labelled "Install Qubes OS" and may be used for the
+    installer image to present a nice "Q" logo and text.
+
+    qubes-rescue/ :
+    These are labelled "Qubes OS (rescue)" and may be used to
+    indicate special Rescue EFI partitions during Apple's Boot Camp
+    selection screen.
+
+* qubes.icns
+  This file is a collection of Apple ICNS formatted bitmap images.
+
+  By default, macOS shows bootable partitions as "EFI Boot" with
+  a generic USB drive icon.  This file replaces the generic icon
+  with the official "Q" Qubes OS logo.
+
+  The EFI installer copies and renames this file to:
+  
+    /boot/efi/.VolumeIcon.icns
+
+  It was originally sourced from the file located at:
+
+    ../../icons/512x512/apps/qubes-logo-icon.png
+  
+  The most reliable Linux utility to create ICNS was a large NodeJS
+  installation and did not produce Retina high-resolution images.
+  Therefore, macOS was used to create this file using:
+
+    $ iconutil -c icns <name>.iconset
+  
+  Where <name>.iconset is the name of the folder with the collection
+  of sizes starting with 512x512 and smaller following a specific
+  naming convention.
