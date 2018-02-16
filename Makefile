@@ -3,6 +3,7 @@ RELEASE ?= R2-rc1
 DIRS = \
 	anaconda \
 	backgrounds \
+	bootloader/apple \
 	grub \
 	icons \
 	firstboot/qubes \
