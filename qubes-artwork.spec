@@ -559,6 +559,18 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %{_datadir}/plymouth/themes/qubes-dark/qubes-logo-outline.png
 %{_datadir}/plymouth/themes/qubes-dark/qubes-logo-solid.png
 
+# apple efi boot camp artwork
+/usr/share/pixmaps/bootloader/apple/qubes-install/disk_label
+/usr/share/pixmaps/bootloader/apple/qubes-install/disk_label.contentDetails
+/usr/share/pixmaps/bootloader/apple/qubes-install/disk_label_2x
+/usr/share/pixmaps/bootloader/apple/qubes-rescue/disk_label
+/usr/share/pixmaps/bootloader/apple/qubes-rescue/disk_label.contentDetails
+/usr/share/pixmaps/bootloader/apple/qubes-rescue/disk_label_2x
+/usr/share/pixmaps/bootloader/apple/qubes/disk_label
+/usr/share/pixmaps/bootloader/apple/qubes/disk_label.contentDetails
+/usr/share/pixmaps/bootloader/apple/qubes/disk_label_2x
+/usr/share/pixmaps/bootloader/apple/qubes.icns
+
 # misc files
 /boot/grub/splash.xpm.gz
 /boot/grub2/themes/system/fireworks.png
