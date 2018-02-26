@@ -32,7 +32,11 @@ Requires(post):	dracut
 
 BuildRequires:	ImageMagick
 BuildRequires:	google-roboto-fonts
+%if 0%{?rhel} >= 7
+BuildRequires:	python34-qubesimgconverter
+%else
 BuildRequires:	python3-qubesimgconverter
+%endif
 BuildRequires:	netpbm-progs
 BuildRequires:	pycairo
 
