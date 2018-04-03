@@ -584,4 +584,4 @@ xdg-icon-resource forceupdate --theme oxygen || :
 /boot/efi/EFI/qubes/icons/os_qubes.png
 
 %changelog
-
+@CHANGELOG@
