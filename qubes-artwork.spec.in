@@ -43,10 +43,6 @@ BuildRequires:	pycairo
 
 Source0: %{name}-%{version}.tar.gz
 
-%if 0%{?qubes_builder}
-%define _builddir %(pwd)
-%endif
-
 %description
 Qubes-branded backgrounds, icons, themes.
 
