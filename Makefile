@@ -4,7 +4,6 @@ DIRS = \
 	anaconda \
 	backgrounds \
 	bootloader/apple \
-	grub \
 	icons \
 	firstboot/qubes \
 	plymouth

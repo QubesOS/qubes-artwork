@@ -567,10 +567,6 @@ xdg-icon-resource forceupdate --theme oxygen || :
 /usr/share/pixmaps/bootloader/apple/qubes/disk_label_2x
 /usr/share/pixmaps/bootloader/apple/qubes.icns
 
-# misc files
-/boot/grub/splash.xpm.gz
-/boot/grub2/themes/system/fireworks.png
-
 %files efi
 /boot/efi/EFI/qubes/splash.png
 /boot/efi/EFI/qubes/icons/os_qubes.png
