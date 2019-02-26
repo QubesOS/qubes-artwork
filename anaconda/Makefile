@@ -12,8 +12,8 @@ splash.png: GEOMETRY = 128x128
 %.png: %.svg
 	convert -background none -geometry $(GEOMETRY) $< $@
 
-syslinux-vesa-splash.jpg: ../grub/splash.svg
-	convert ../grub/splash.svg $@
+syslinux-vesa-splash.jpg: splash.svg
+	convert splash.svg $@
 
 syslinux-splash.png: syslinux-splash.svg
 	convert $< -colors 12 -geometry "640x480!" $@
