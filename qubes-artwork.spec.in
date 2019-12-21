@@ -11,15 +11,15 @@ Vendor:		Invisible Things Lab
 URL:		https://www.qubes-os.org
 BuildArch:	noarch
 
-Provides:	system-logos
-Provides:	redhat-logos
-Provides:	fedora-logos
-Provides:	qubes-logos
-Provides:	desktop-backgrounds-compat
+Obsoletes:	system-logos
 Obsoletes:	redhat-logos
 Obsoletes:	fedora-logos
-Obsoletes:	qubes-logos
 Obsoletes:	desktop-backgrounds-compat
+
+Provides:	system-logos = 1000:%{version}-%{release}
+Provides:	redhat-logos = 1000:%{version}-%{release}
+Provides:	fedora-logos = 1000:%{version}-%{release}
+Provides:	desktop-backgrounds-compat = 1000:%{version}-%{release}
 
 Requires(post):	plymouth
 Requires(post):	plymouth-scripts
