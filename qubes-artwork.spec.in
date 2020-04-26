@@ -23,13 +23,6 @@ Provides:	desktop-backgrounds-compat = 1000:%{version}-%{release}
 # lorax is fetching qubes-logos
 Provides:	qubes-logos = %{version}-%{release}
 
-Requires(post):	plymouth
-Requires(post):	plymouth-scripts
-# plymouth-scripts should depend on plymouth-plugin-scripts, but it does not
-Requires(post):	plymouth-plugin-script
-Requires(post):	plymouth-plugin-label
-Requires(post):	dracut
-
 BuildRequires:	ImageMagick
 BuildRequires:	google-roboto-fonts
 BuildRequires:	python%{python3_pkgversion}-qubesimgconverter
@@ -43,6 +36,18 @@ Source0: %{name}-%{version}.tar.gz
 
 %description
 Qubes-branded backgrounds, icons, themes.
+
+%package plymouth
+Summary:    Qubes OS theme for Plymouth
+Requires(post):	plymouth
+Requires(post):	plymouth-scripts
+# plymouth-scripts should depend on plymouth-plugin-scripts, but it does not
+Requires(post):	plymouth-plugin-script
+Requires(post):	plymouth-plugin-label
+Requires(post):	dracut
+
+%description plymouth
+Qubes OS theme for Plymouth
 
 %package efi
 Summary:    Qubes OS theme for EFI boot manager (rEFInd)
@@ -72,7 +77,7 @@ xdg-icon-resource forceupdate --theme oxygen || :
 # triggers
 #
 
-%triggerin -- plymouth
+%triggerin plymouth -- plymouth
 /usr/sbin/plymouth-set-default-theme qubes-dark || :
 
 #
@@ -545,18 +550,6 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %{_datadir}/firstboot/themes/qubes/splash-small.png
 %{_datadir}/firstboot/themes/qubes/workstation.png
 
-# plymouth
-%{_sysconfdir}/dracut.conf.d/plymouth-missing-fonts.conf
-%{_datadir}/plymouth/themes/qubes-dark/bullet.png
-%{_datadir}/plymouth/themes/qubes-dark/entry.png
-%{_datadir}/plymouth/themes/qubes-dark/padlock.png
-%{_datadir}/plymouth/themes/qubes-dark/progress_bar.png
-%{_datadir}/plymouth/themes/qubes-dark/progress_box.png
-%{_datadir}/plymouth/themes/qubes-dark/qubes-dark.plymouth
-%{_datadir}/plymouth/themes/qubes-dark/qubes-dark.script
-%{_datadir}/plymouth/themes/qubes-dark/qubes-logo-outline.png
-%{_datadir}/plymouth/themes/qubes-dark/qubes-logo-solid.png
-
 # apple efi boot camp artwork
 /usr/share/pixmaps/bootloader/apple/qubes-install/disk_label
 /usr/share/pixmaps/bootloader/apple/qubes-install/disk_label.contentDetails
@@ -568,6 +561,18 @@ xdg-icon-resource forceupdate --theme oxygen || :
 /usr/share/pixmaps/bootloader/apple/qubes/disk_label.contentDetails
 /usr/share/pixmaps/bootloader/apple/qubes/disk_label_2x
 /usr/share/pixmaps/bootloader/apple/qubes.icns
+
+%files plymouth
+%{_sysconfdir}/dracut.conf.d/plymouth-missing-fonts.conf
+%{_datadir}/plymouth/themes/qubes-dark/bullet.png
+%{_datadir}/plymouth/themes/qubes-dark/entry.png
+%{_datadir}/plymouth/themes/qubes-dark/padlock.png
+%{_datadir}/plymouth/themes/qubes-dark/progress_bar.png
+%{_datadir}/plymouth/themes/qubes-dark/progress_box.png
+%{_datadir}/plymouth/themes/qubes-dark/qubes-dark.plymouth
+%{_datadir}/plymouth/themes/qubes-dark/qubes-dark.script
+%{_datadir}/plymouth/themes/qubes-dark/qubes-logo-outline.png
+%{_datadir}/plymouth/themes/qubes-dark/qubes-logo-solid.png
 
 %files efi
 /boot/efi/EFI/qubes/splash.png
