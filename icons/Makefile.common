@@ -17,6 +17,22 @@ ALL = \
 	devices/dispvm-blue.png \
 	devices/dispvm-purple.png \
 	devices/dispvm-black.png \
+	devices/templatevm-red.png \
+	devices/templatevm-orange.png \
+	devices/templatevm-yellow.png \
+	devices/templatevm-green.png \
+	devices/templatevm-gray.png \
+	devices/templatevm-blue.png \
+	devices/templatevm-purple.png \
+	devices/templatevm-black.png \
+	devices/servicevm-red.png \
+	devices/servicevm-orange.png \
+	devices/servicevm-yellow.png \
+	devices/servicevm-green.png \
+	devices/servicevm-gray.png \
+	devices/servicevm-blue.png \
+	devices/servicevm-purple.png \
+	devices/servicevm-black.png \
 
 all: dirs $(ALL)
 .PHONY: all
@@ -26,23 +42,29 @@ dirs:
 	mkdir -p $(DIRS)
 .PHONY: dirs
 
-devices/%-red.png:	COLOUR = 0xcc0000
-devices/%-orange.png:	COLOUR = 0xf57900
-devices/%-yellow.png:	COLOUR = 0xc4a000
-devices/%-green.png:	COLOUR = 0x4e9a06
-devices/%-gray.png:	COLOUR = 0x555753
-devices/%-blue.png:	COLOUR = 0x3465a4
-devices/%-purple.png:	COLOUR = 0x75507b
-devices/%-black.png:	COLOUR = 0x000000
+devices/%-red.png:  NAME = red
+devices/%-orange.png:	NAME = orange
+devices/%-yellow.png:	NAME = yellow
+devices/%-green.png:    NAME = green
+devices/%-gray.png: NAME = black
+devices/%-blue.png: NAME = blue
+devices/%-purple.png:	NAME = purple
+devices/%-black.png:	NAME = black
 
-devices/appvm-%.png:
-	../../bin/mkpadlock.py -s $(SIZE) -c $(COLOUR) $@
+devices/appvm-%.png: TYPE = appvm
+devices/dispvm-%.png: TYPE = dispvm
+devices/templatevm-%.png: TYPE = templatevm
+devices/servicevm-%.png: TYPE = servicevm
 
-devices/dispvm-%.png:
-	../../bin/mkpadlock.py -s $(SIZE) -c $(COLOUR) -D $@
+devices/%.png:
+ifeq ($(strip $(shell inkscape --version | grep -o 'Inkscape 0.')),Inkscape 0.)
+	inkscape -z -w $(SIZE) -h $(SIZE)  ../qube-icons/$(TYPE)-$(NAME).svg -e $@
+else
+	inkscape -w $(SIZE) -h $(SIZE) -o $@ ../qube-icons/$(TYPE)-$(NAME).svg
+endif
+
 
 clean:
-	$(RM) $(ALL)
 .PHONY: clean
 
 MYDESTDIR = $(DESTDIR)/usr/share/icons/hicolor/$(notdir $(shell pwd))
