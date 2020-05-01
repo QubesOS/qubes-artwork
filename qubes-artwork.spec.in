@@ -32,7 +32,6 @@ BuildRequires:	ImageMagick
 BuildRequires:	google-roboto-fonts
 BuildRequires:	python%{python3_pkgversion}-qubesimgconverter
 BuildRequires:	netpbm-progs
-BuildRequires:	python%{python3_pkgversion}-cairo
 
 # see backgrounds/Makefile
 #BuildRequires:	inkscape >= 0.91
