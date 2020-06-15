@@ -1,5 +1,3 @@
-%global debug_package %{nil}
-
 Name:		qubes-artwork
 Version:	@VERSION@
 Release:	2%{?dist}
@@ -29,9 +27,6 @@ BuildRequires:	google-roboto-fonts
 BuildRequires:	python%{python3_pkgversion}-qubesimgconverter
 BuildRequires:	netpbm-progs
 
-# see backgrounds/Makefile
-#BuildRequires:	inkscape >= 0.91
-
 Source0: %{name}-%{version}.tar.gz
 
 %description
@@ -55,10 +50,18 @@ Summary:    Qubes OS theme for EFI boot manager (rEFInd)
 %description efi
 Qubes OS theme for rEFInd boot manager
 
+%package anaconda
+Summary:    Qubes OS theme for Anaconda
+
+%description anaconda
+Qubes OS theme for Anaconda
+
+
 %prep
 %setup -q
 make clean
 mkdir -p %{_rpmdir}
+
 
 %build
 make
@@ -67,15 +70,13 @@ make
 %install
 make install DESTDIR=%{buildroot}
 
-%post
+
+%post plymouth
 /usr/sbin/plymouth-set-default-theme qubes-dark && \
 PATH="/sbin:$PATH" dracut -f || :
 xdg-icon-resource forceupdate --theme hicolor || :
 xdg-icon-resource forceupdate --theme oxygen || :
 
-#
-# triggers
-#
 
 %triggerin plymouth -- plymouth
 /usr/sbin/plymouth-set-default-theme qubes-dark || :
@@ -742,6 +743,36 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %{_datadir}/wallpapers/Qubes_Wine/contents/screenshot.png
 %{_datadir}/wallpapers/Qubes_Wine/metadata.desktop
 
+%files plymouth
+%{_sysconfdir}/dracut.conf.d/plymouth-missing-fonts.conf
+%{_datadir}/plymouth/themes/qubes-dark/bullet.png
+%{_datadir}/plymouth/themes/qubes-dark/entry.png
+%{_datadir}/plymouth/themes/qubes-dark/padlock.png
+%{_datadir}/plymouth/themes/qubes-dark/progress_bar.png
+%{_datadir}/plymouth/themes/qubes-dark/progress_box.png
+%{_datadir}/plymouth/themes/qubes-dark/qubes-dark.plymouth
+%{_datadir}/plymouth/themes/qubes-dark/qubes-dark.script
+%{_datadir}/plymouth/themes/qubes-dark/qubes-logo-outline.png
+%{_datadir}/plymouth/themes/qubes-dark/qubes-logo-solid.png
+
+
+%files efi
+/boot/efi/EFI/qubes/splash.png
+/boot/efi/EFI/qubes/icons/os_qubes.png
+
+# apple efi boot camp artwork
+/usr/share/pixmaps/bootloader/apple/qubes-install/disk_label
+/usr/share/pixmaps/bootloader/apple/qubes-install/disk_label.contentDetails
+/usr/share/pixmaps/bootloader/apple/qubes-install/disk_label_2x
+/usr/share/pixmaps/bootloader/apple/qubes-rescue/disk_label
+/usr/share/pixmaps/bootloader/apple/qubes-rescue/disk_label.contentDetails
+/usr/share/pixmaps/bootloader/apple/qubes-rescue/disk_label_2x
+/usr/share/pixmaps/bootloader/apple/qubes/disk_label
+/usr/share/pixmaps/bootloader/apple/qubes/disk_label.contentDetails
+/usr/share/pixmaps/bootloader/apple/qubes/disk_label_2x
+/usr/share/pixmaps/bootloader/apple/qubes.icns
+
+%files anaconda
 # anaconda
 %{_datadir}/anaconda/boot/syslinux-splash.png
 %{_datadir}/anaconda/pixmaps/anaconda_header.png
@@ -758,33 +789,6 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %{_datadir}/firstboot/themes/qubes/splash-small.png
 %{_datadir}/firstboot/themes/qubes/workstation.png
 
-# apple efi boot camp artwork
-/usr/share/pixmaps/bootloader/apple/qubes-install/disk_label
-/usr/share/pixmaps/bootloader/apple/qubes-install/disk_label.contentDetails
-/usr/share/pixmaps/bootloader/apple/qubes-install/disk_label_2x
-/usr/share/pixmaps/bootloader/apple/qubes-rescue/disk_label
-/usr/share/pixmaps/bootloader/apple/qubes-rescue/disk_label.contentDetails
-/usr/share/pixmaps/bootloader/apple/qubes-rescue/disk_label_2x
-/usr/share/pixmaps/bootloader/apple/qubes/disk_label
-/usr/share/pixmaps/bootloader/apple/qubes/disk_label.contentDetails
-/usr/share/pixmaps/bootloader/apple/qubes/disk_label_2x
-/usr/share/pixmaps/bootloader/apple/qubes.icns
-
-%files plymouth
-%{_sysconfdir}/dracut.conf.d/plymouth-missing-fonts.conf
-%{_datadir}/plymouth/themes/qubes-dark/bullet.png
-%{_datadir}/plymouth/themes/qubes-dark/entry.png
-%{_datadir}/plymouth/themes/qubes-dark/padlock.png
-%{_datadir}/plymouth/themes/qubes-dark/progress_bar.png
-%{_datadir}/plymouth/themes/qubes-dark/progress_box.png
-%{_datadir}/plymouth/themes/qubes-dark/qubes-dark.plymouth
-%{_datadir}/plymouth/themes/qubes-dark/qubes-dark.script
-%{_datadir}/plymouth/themes/qubes-dark/qubes-logo-outline.png
-%{_datadir}/plymouth/themes/qubes-dark/qubes-logo-solid.png
-
-%files efi
-/boot/efi/EFI/qubes/splash.png
-/boot/efi/EFI/qubes/icons/os_qubes.png
 
 %changelog
 @CHANGELOG@
