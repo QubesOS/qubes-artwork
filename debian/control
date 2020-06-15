@@ -1,5 +1,5 @@
 Source: qubes-artwork
-Section: general
+Section: graphics
 Priority: extra
 Maintainer: Frédéric Pierret (fepitre) <frederic.pierret@qubes-os.org>
 Build-Depends:
@@ -9,11 +9,12 @@ Build-Depends:
  librsvg2-bin,
  netpbm,
  fonts-roboto,
- qubes-img-converter
+ qubes-utils,
+ python3-cairo
 Standards-Version: 3.9.5
 Homepage: http://www.qubes-os.org
 
 Package: qubes-artwork
-Section: general
+Section: graphics
 Architecture: amd64
 Description: Qubes-branded backgrounds, icons, themes.

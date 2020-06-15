@@ -1,37 +1,38 @@
-RELEASE ?= R2-rc1
+RELEASE ?= R4.1
 
-DIRS = \
-	anaconda \
-	backgrounds \
-	bootloader/apple \
-	icons \
-	firstboot/qubes \
-	plymouth
+BASE_DIRS = backgrounds icons
+ANACONDA_DIRS = anaconda firstboot/qubes
+EFI_DIRS = bootloader/apple
+PLYMOUTH_DIRS = plymouth
 
-RPMDIR = rpm/
+DIRS = $(BASE_DIRS) $(ANACONDA_DIRS) $(EFI_DIRS) $(PLYMOUTH_DIRS)
 
+.PHONY: all
 all:
 	@for dir in $(DIRS); do $(MAKE) -C $$dir RELEASE=$(RELEASE) $@ || exit 1; done
-.PHONY: all
 
+.PHONY: clean
 clean:
 	@for dir in $(DIRS); do $(MAKE) -C $$dir $@ || exit 1; done
-	$(RM) -r $(RPMDIR) *.list
-.PHONY: clean
 
-install:
+install-base:
 	install -d $(DESTDIR)
-	@for dir in $(DIRS); do $(MAKE) -C $$dir DESTDIR=$(DESTDIR) $@ || exit 1; done
-	@# temporary theme
+	@for dir in $(BASE_DIRS); do $(MAKE) -C $$dir DESTDIR=$(DESTDIR) install || exit 1; done
+
+install-anaconda:
+	install -d $(DESTDIR)
+	@for dir in $(ANACONDA_DIRS); do $(MAKE) -C $$dir DESTDIR=$(DESTDIR) install || exit 1; done
+
+install-efi:
 	install -D -m 0644 anaconda/syslinux-splash.png \
 		$(DESTDIR)/boot/efi/EFI/qubes/splash.png
 	install -D -m 0644 plymouth/qubes-dark/qubes-logo-solid.png \
 		$(DESTDIR)/boot/efi/EFI/qubes/icons/os_qubes.png
+	install -d $(DESTDIR)
+	@for dir in $(EFI_DIRS); do $(MAKE) -C $$dir DESTDIR=$(DESTDIR) install || exit 1; done
 
-.PHONY: install
+install-plymouth:
+	install -d $(DESTDIR)
+	@for dir in $(PLYMOUTH_DIRS); do $(MAKE) -C $$dir DESTDIR=$(DESTDIR) install || exit 1; done
 
-
-rpms:
-	rpmbuild --define "_rpmdir $(RPMDIR)" -bb qubes-artwork.spec
-#	rpm --addsign $(RPMDIR)/x86_64/qubes-artwork-*$(VERSION)*.rpm
-.PHONY: rpms
+install: install-base install-anaconda install-efi install-plymouth

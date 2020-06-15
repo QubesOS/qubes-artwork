@@ -7,7 +7,7 @@ export DESTDIR=$(shell pwd)/debian/tmp
 	dh $@
 
 override_dh_auto_install:
-	make install
+	make install-base
 
 override_dh_install:
 	dh_install --fail-missing
