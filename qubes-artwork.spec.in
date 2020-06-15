@@ -1,6 +1,6 @@
 Name:		qubes-artwork
 Version:	@VERSION@
-Release:	2%{?dist}
+Release:	@REL@%{?dist}
 
 Summary:	Qubes branding
 License:	CC BY-SA 4.0 International, GPL v2

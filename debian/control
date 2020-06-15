@@ -1,0 +1,19 @@
+Source: qubes-artwork
+Section: general
+Priority: extra
+Maintainer: Frédéric Pierret (fepitre) <frederic.pierret@qubes-os.org>
+Build-Depends:
+ debhelper (>= 10~),
+ inkscape,
+ imagemagick,
+ librsvg2-bin,
+ netpbm,
+ fonts-roboto,
+ qubes-img-converter
+Standards-Version: 3.9.5
+Homepage: http://www.qubes-os.org
+
+Package: qubes-artwork
+Section: general
+Architecture: amd64
+Description: Qubes-branded backgrounds, icons, themes.
