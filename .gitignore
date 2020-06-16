@@ -3,3 +3,4 @@ rpm/
 pkgs/
 qubes-artwork-1
 *.list
+debian/changelog.*

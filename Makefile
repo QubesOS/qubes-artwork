@@ -14,6 +14,8 @@ all:
 .PHONY: clean
 clean:
 	@for dir in $(DIRS); do $(MAKE) -C $$dir $@ || exit 1; done
+	rm -rf debian/changelog.*
+	rm -rf pkgs
 
 install-base:
 	install -d $(DESTDIR)
