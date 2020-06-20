@@ -9,8 +9,7 @@ Build-Depends:
  librsvg2-bin,
  netpbm,
  fonts-roboto,
- qubes-utils,
- python3-cairo
+ qubes-utils
 Standards-Version: 3.9.5
 Homepage: http://www.qubes-os.org
 
