@@ -1,3 +1,10 @@
+qubes-artwork (4.1.7-1) wheezy; urgency=medium
+
+  [ Marta Marczykowska-Górecka ]
+  * Removed wrongly sized icons
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Fri, 10 Jul 2020 11:49:07 +0200
+
 qubes-artwork (4.1.6-2) unstable; urgency=medium
 
   [ Frédéric Pierret (fepitre) ]
