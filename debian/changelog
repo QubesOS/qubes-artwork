@@ -1,3 +1,10 @@
+qubes-artwork (4.1.8-1) unstable; urgency=medium
+
+  [ Marta Marczykowska-Górecka ]
+  * Added a specific icon for AdminVM vms
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Wed, 12 Aug 2020 01:28:56 +0200
+
 qubes-artwork (4.1.7-1) wheezy; urgency=medium
 
   [ Marta Marczykowska-Górecka ]
