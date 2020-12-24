@@ -8,7 +8,7 @@ all: $(ALL)
 #	inkscape --export-png=$@ $<
 
 padlock.png:
-	../../bin/mkpadlock.py -s 40 -c 0xee0000 $@
+	$(PYTHON) ../../bin/mkpadlock.py -s 40 -c 0xee0000 $@
 
 clean:
 	$(RM) $(ALL)
