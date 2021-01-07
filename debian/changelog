@@ -1,3 +1,11 @@
+qubes-artwork (4.1.9-1) unstable; urgency=medium
+
+  [ Frédéric Pierret (fepitre) ]
+  * Add .gitlab-ci.yml
+  * Fix build with python3 for CentOS
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Thu, 07 Jan 2021 15:07:45 +0100
+
 qubes-artwork (4.1.8-1) unstable; urgency=medium
 
   [ Marta Marczykowska-Górecka ]
