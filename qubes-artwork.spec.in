@@ -21,6 +21,7 @@ Provides:	desktop-backgrounds-compat = 1000:%{version}-%{release}
 # lorax is fetching qubes-logos
 Provides:	qubes-logos = %{version}-%{release}
 
+BuildRequires:	make
 BuildRequires:	inkscape
 BuildRequires:  ImageMagick
 BuildRequires:	google-roboto-fonts
