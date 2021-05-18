@@ -1,3 +1,10 @@
+qubes-artwork (4.1.10-1) unstable; urgency=medium
+
+  [ Frédéric Pierret (fepitre) ]
+  * spec: add BR make
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Tue, 18 May 2021 03:59:38 +0200
+
 qubes-artwork (4.1.9-1) unstable; urgency=medium
 
   [ Frédéric Pierret (fepitre) ]
