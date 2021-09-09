@@ -92,6 +92,39 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %doc HACKING
 
 # icons
+%{_datadir}/icons/hicolor/scalable/apps/adminvm-black.svg
+%{_datadir}/icons/hicolor/scalable/apps/appvm-black.svg
+%{_datadir}/icons/hicolor/scalable/apps/appvm-blue.svg
+%{_datadir}/icons/hicolor/scalable/apps/appvm-gray.svg
+%{_datadir}/icons/hicolor/scalable/apps/appvm-green.svg
+%{_datadir}/icons/hicolor/scalable/apps/appvm-orange.svg
+%{_datadir}/icons/hicolor/scalable/apps/appvm-purple.svg
+%{_datadir}/icons/hicolor/scalable/apps/appvm-red.svg
+%{_datadir}/icons/hicolor/scalable/apps/appvm-yellow.svg
+%{_datadir}/icons/hicolor/scalable/apps/dispvm-black.svg
+%{_datadir}/icons/hicolor/scalable/apps/dispvm-blue.svg
+%{_datadir}/icons/hicolor/scalable/apps/dispvm-gray.svg
+%{_datadir}/icons/hicolor/scalable/apps/dispvm-green.svg
+%{_datadir}/icons/hicolor/scalable/apps/dispvm-orange.svg
+%{_datadir}/icons/hicolor/scalable/apps/dispvm-purple.svg
+%{_datadir}/icons/hicolor/scalable/apps/dispvm-red.svg
+%{_datadir}/icons/hicolor/scalable/apps/dispvm-yellow.svg
+%{_datadir}/icons/hicolor/scalable/apps/servicevm-black.svg
+%{_datadir}/icons/hicolor/scalable/apps/servicevm-blue.svg
+%{_datadir}/icons/hicolor/scalable/apps/servicevm-gray.svg
+%{_datadir}/icons/hicolor/scalable/apps/servicevm-green.svg
+%{_datadir}/icons/hicolor/scalable/apps/servicevm-orange.svg
+%{_datadir}/icons/hicolor/scalable/apps/servicevm-purple.svg
+%{_datadir}/icons/hicolor/scalable/apps/servicevm-red.svg
+%{_datadir}/icons/hicolor/scalable/apps/servicevm-yellow.svg
+%{_datadir}/icons/hicolor/scalable/apps/templatevm-black.svg
+%{_datadir}/icons/hicolor/scalable/apps/templatevm-blue.svg
+%{_datadir}/icons/hicolor/scalable/apps/templatevm-gray.svg
+%{_datadir}/icons/hicolor/scalable/apps/templatevm-green.svg
+%{_datadir}/icons/hicolor/scalable/apps/templatevm-orange.svg
+%{_datadir}/icons/hicolor/scalable/apps/templatevm-purple.svg
+%{_datadir}/icons/hicolor/scalable/apps/templatevm-red.svg
+%{_datadir}/icons/hicolor/scalable/apps/templatevm-yellow.svg
 %{_datadir}/icons/hicolor/16x16/apps/qubes-appmenu-select.png
 %{_datadir}/icons/hicolor/16x16/apps/qubes-logo-icon.png
 %{_datadir}/icons/hicolor/16x16/apps/qubes-manager.png

@@ -24,4 +24,7 @@ install:
 	ln -s ../../../hicolor/scalable/places/start-here-qubes-green.svg $(DESTDIR)/usr/share/icons/oxygen/scalable/places/start-here-qubes-green.svg
 	ln -s ../../../hicolor/scalable/places/start-here-qubes-red.svg $(DESTDIR)/usr/share/icons/oxygen/scalable/places/start-here-qubes-red.svg
 	ln -s ../../../hicolor/scalable/places/start-here-qubes-yellow.svg $(DESTDIR)/usr/share/icons/oxygen/scalable/places/start-here-qubes-yellow.svg
+
+	mkdir -p $(DESTDIR)/usr/share/icons/hicolor/scalable/apps/
+	cp scalable/apps/* $(DESTDIR)/usr/share/icons/hicolor/scalable/apps/
 .PHONY: install

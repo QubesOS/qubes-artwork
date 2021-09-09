@@ -60,9 +60,9 @@ devices/adminvm-%.png: TYPE = adminvm
 
 devices/%.png:
 ifeq ($(strip $(shell inkscape --version | grep -o 'Inkscape 0.')),Inkscape 0.)
-	inkscape -z -w $(SIZE) -h $(SIZE)  ../qube-icons/$(TYPE)-$(NAME).svg -e $@
+	inkscape -z -w $(SIZE) -h $(SIZE)  ../scalable/apps/$(TYPE)-$(NAME).svg -e $@
 else
-	inkscape -w $(SIZE) -h $(SIZE) -o $@ ../qube-icons/$(TYPE)-$(NAME).svg
+	inkscape -w $(SIZE) -h $(SIZE) -o $@ ../scalable/apps/$(TYPE)-$(NAME).svg
 endif
 
 
