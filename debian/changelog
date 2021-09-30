@@ -1,3 +1,10 @@
+qubes-artwork (4.1.12-1) unstable; urgency=medium
+
+  [ Marta Marczykowska-Górecka ]
+  * Added scalable versions of VM icons
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Fri, 01 Oct 2021 00:27:18 +0200
+
 qubes-artwork (4.1.11-1) unstable; urgency=medium
 
   [ Marta Marczykowska-Górecka ]
