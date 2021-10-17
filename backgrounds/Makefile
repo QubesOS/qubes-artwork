@@ -2,6 +2,7 @@ AUTHOR = Michał Kopczyński
 LICENCE = CC-BY-SA 4.0
 KDEGEOMETRIES = 2048x1536 1920x1080 1600x900 1280x1024
 ALLSVG = $(wildcard *.svg)
+ALLJPG = $(wildcard *.jpg)
 
 all: kde
 .PHONY: all
@@ -19,10 +20,14 @@ clean:
 install:
 	install -d $(DESTDIR)/usr/share/backgrounds/qubes
 	install -t $(DESTDIR)/usr/share/backgrounds/qubes -m 644 $(ALLSVG)
+	install -t $(DESTDIR)/usr/share/backgrounds/qubes -m 644 $(ALLJPG)
 
 	install -d $(DESTDIR)/usr/share/backgrounds/xfce
 	for svg in $(notdir $(ALLSVG)); do \
 		ln -s ../qubes/$$svg $(DESTDIR)/usr/share/backgrounds/xfce/ || exit 1; \
+	done
+	for jpg in $(notdir $(ALLJPG)); do \
+		ln -s ../qubes/$$jpg $(DESTDIR)/usr/share/backgrounds/xfce/ || exit 1; \
 	done
 
 	install -d $(DESTDIR)/usr/share/wallpapers
