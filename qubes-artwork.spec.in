@@ -801,6 +801,13 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %{_datadir}/plymouth/themes/qubes-dark/qubes-dark.script
 %{_datadir}/plymouth/themes/qubes-dark/qubes-logo-outline.png
 %{_datadir}/plymouth/themes/qubes-dark/qubes-logo-solid.png
+%{_datadir}/plymouth/themes/qubes-dark-no-echo/padlock.png
+%{_datadir}/plymouth/themes/qubes-dark-no-echo/progress_bar.png
+%{_datadir}/plymouth/themes/qubes-dark-no-echo/progress_box.png
+%{_datadir}/plymouth/themes/qubes-dark-no-echo/qubes-dark-no-echo.plymouth
+%{_datadir}/plymouth/themes/qubes-dark-no-echo/qubes-dark-no-echo.script
+%{_datadir}/plymouth/themes/qubes-dark-no-echo/qubes-logo-outline.png
+%{_datadir}/plymouth/themes/qubes-dark-no-echo/qubes-logo-solid.png
 
 
 %files efi
