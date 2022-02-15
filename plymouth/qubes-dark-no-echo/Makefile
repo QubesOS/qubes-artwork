@@ -1,0 +1,26 @@
+ALL = $(patsubst %.svg,%.png,$(wildcard *.svg)) padlock.png
+
+all: $(ALL)
+.PHONY: all
+
+%.png: %.svg
+	convert -background none -antialias $< $@
+#	inkscape --export-png=$@ $<
+
+padlock.png:
+	$(PYTHON) ../../bin/mkpadlock.py -s 40 -c 0xee0000 $@
+
+clean:
+	$(RM) $(ALL)
+.PHONY: clean
+
+install:
+	mkdir -p $(DESTDIR)/usr/share/plymouth/themes/qubes-dark-no-echo
+	install -m 0644 -t $(DESTDIR)/usr/share/plymouth/themes/qubes-dark-no-echo \
+		$(ALL) \
+		progress_bar.png \
+		progress_box.png \
+		qubes-dark-no-echo.plymouth \
+		qubes-dark-no-echo.script
+
+.PHONY: install

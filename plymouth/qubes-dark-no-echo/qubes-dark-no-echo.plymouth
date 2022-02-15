@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Qubes Dark (no echo)
+Description=Qubes plymouth theme, dark variant, password will not be echoed
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/qubes-dark-no-echo
+ScriptFile=/usr/share/plymouth/themes/qubes-dark-no-echo/qubes-dark-no-echo.script
