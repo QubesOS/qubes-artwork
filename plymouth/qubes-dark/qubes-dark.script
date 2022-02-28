@@ -16,6 +16,8 @@ Plymouth.SetRefreshFunction(refresh_callback);
 #----------------------------------------- Dialogue --------------------------------
 
 status = "normal";
+password_echo = 1;
+bullet_count = 0;
 
 fun dialog_setup(text)
 {
@@ -29,7 +31,11 @@ fun dialog_setup(text)
     # Try to load AEM secret image, if the file doesn't exists, plymouth shouldn't display anything
     aemsecret.image = Image("antievilmaid_secret.png");
 
-    entry.image = Image("entry.png");
+    if (global.password_echo) {
+        entry.image = Image("entry.png");
+    } else {
+        entry.image = Image.Text("Password bullets will be hidden", 0.8, 0.8, 0.8);
+    }
     
     prompt.sprite = Sprite(prompt.image);
     prompt.sprite.SetX(logo.sprite.GetX() + (logo.image.GetWidth() - prompt.image.GetWidth()) / 2);
@@ -41,6 +47,9 @@ fun dialog_setup(text)
     entry.sprite.SetX(prompt.sprite.GetX() + (prompt.image.GetWidth() - entry.image.GetWidth()) / 2);
     entry.sprite.SetY(prompt.sprite.GetY() + prompt.image.GetHeight() + 16);
     entry.sprite.SetZ(1);
+
+    help.image = Image.Text("F1 - Hide password bullets\nF2 - Show password as bullets", 0.8, 0.8, 0.8);
+    help.sprite = Sprite(help.image);
     
     aemsecret.sprite = Sprite(aemsecret.image);
     aemsecret.sprite.SetX(entry.sprite.GetX() + (entry.image.GetWidth() - aemsecret.image.GetWidth()) / 2);
@@ -49,6 +58,7 @@ fun dialog_setup(text)
     
     global.dialog.prompt = prompt;
     global.dialog.entry = entry;
+    global.dialog.help = help;
     global.dialog.aemsecret = aemsecret;
     global.dialog.bullet_image = Image("bullet.png");
     dialog_opacity(1);
@@ -73,6 +83,7 @@ fun display_normal_callback()
 
 fun display_password_callback(prompt, bullets)
 {
+    global.bullet_count = bullets;
     if (prompt.SubString(0,32) == "Please enter passphrase for disk") {
         prompt = "Disk password";
     }
@@ -93,18 +104,34 @@ fun display_password_callback(prompt, bullets)
     for (index = 0; dialog.bullet[index] || index < bullets; index++) {
         if (!dialog.bullet[index]) {
             dialog.bullet[index].sprite = Sprite(dialog.bullet_image);
-            dialog.bullet[index].sprite.SetX(dialog.entry.sprite.GetX() + 5 + (index % 21) * (dialog.bullet_image.GetWidth() + 2));
-            dialog.bullet[index].sprite.SetY(dialog.entry.sprite.GetY() + dialog.entry.image.GetHeight() / 2 - dialog.bullet_image.GetHeight() / 2);
             dialog.bullet[index].sprite.SetZ(dialog.entry.sprite.GetZ() + 1);
         }
 
-        if (index < bullets)
+        /* Always update position, otherwise bullets added during no echo mode will be at the wrong position */
+        dialog.bullet[index].sprite.SetX(dialog.entry.sprite.GetX() + 5 + (index % 21) * (dialog.bullet_image.GetWidth() + 2));
+        dialog.bullet[index].sprite.SetY(dialog.entry.sprite.GetY() + dialog.entry.image.GetHeight() / 2 - dialog.bullet_image.GetHeight() / 2);
+
+        if (index < bullets && global.password_echo)
             dialog.bullet[index].sprite.SetOpacity(1);
         else
             dialog.bullet[index].sprite.SetOpacity(0);
       }
 }
 
+fun keyboard_input_callback(key){
+    if (key == "[[A") {
+        global.password_echo = 0;
+        dialog_setup(global.dialog.prompt.text);
+        display_password_callback(global.dialog.prompt.text, global.bullet_count);
+    }
+    if (key == "[[B") {
+        global.password_echo = 1;
+        dialog_setup(global.dialog.prompt.text);
+        display_password_callback(global.dialog.prompt.text, global.bullet_count);
+    }
+}
+
+Plymouth.SetKeyboardInputFunction(keyboard_input_callback);
 Plymouth.SetDisplayNormalFunction(display_normal_callback);
 Plymouth.SetDisplayPasswordFunction(display_password_callback);
 
