@@ -16,8 +16,10 @@ Plymouth.SetRefreshFunction(refresh_callback);
 #----------------------------------------- Dialogue --------------------------------
 
 status = "normal";
-password_echo = 1;
+show_dots = 1;
+show_plaintext_password = 0;
 bullet_count = 0;
+plaintext_password = "";
 
 fun dialog_setup(text)
 {
@@ -31,7 +33,7 @@ fun dialog_setup(text)
     # Try to load AEM secret image, if the file doesn't exists, plymouth shouldn't display anything
     aemsecret.image = Image("antievilmaid_secret.png");
 
-    if (global.password_echo) {
+    if (global.show_dots || global.show_plaintext_password) {
         entry.image = Image("entry.png");
     } else {
         entry.image = Image.Text("Password bullets will be hidden", 0.8, 0.8, 0.8);
@@ -48,7 +50,7 @@ fun dialog_setup(text)
     entry.sprite.SetY(prompt.sprite.GetY() + prompt.image.GetHeight() + 16);
     entry.sprite.SetZ(1);
 
-    help.image = Image.Text("F1 - Hide password bullets\nF2 - Show password as bullets", 0.8, 0.8, 0.8);
+    help.image = Image.Text("F1 - Hide password bullets\nF2 - Show password as bullets\nF3 - Show password as text", 0.8, 0.8, 0.8);
     help.sprite = Sprite(help.image);
     
     aemsecret.sprite = Sprite(aemsecret.image);
@@ -81,9 +83,10 @@ fun display_normal_callback()
         dialog_opacity(0);
 }
 
-fun display_password_callback(prompt, bullets)
+fun display_password_callback(prompt, bullets, password)
 {
     global.bullet_count = bullets;
+    global.plaintext_password = password;
     if (prompt.SubString(0,32) == "Please enter passphrase for disk") {
         prompt = "Disk password";
     }
@@ -101,6 +104,22 @@ fun display_password_callback(prompt, bullets)
         }
     }
 
+    if (global.show_plaintext_password) {
+        max_password_width = dialog.entry.image.GetWidth()-5*2;
+        dialog.plaintext_password.image = Image.Text(password);
+        password_width = dialog.plaintext_password.image.GetWidth();
+
+        if (password_width > max_password_width)
+            dialog.plaintext_password.image = dialog.plaintext_password.image.Crop(password_width-max_password_width, 0, max_password_width, dialog.plaintext_password.image.GetHeight());
+        dialog.plaintext_password.sprite = Sprite(dialog.plaintext_password.image);
+        dialog.plaintext_password.sprite.SetX(dialog.entry.sprite.GetX() + 5);
+        dialog.plaintext_password.sprite.SetY(dialog.entry.sprite.GetY() + dialog.entry.image.GetHeight() / 2 - dialog.plaintext_password.image.GetHeight() / 2);
+        dialog.plaintext_password.sprite.SetZ(2);
+        dialog.plaintext_password.sprite.SetOpacity(1);
+    } else {
+        dialog.plaintext_password.sprite.SetOpacity(0);
+    }
+
     for (index = 0; dialog.bullet[index] || index < bullets; index++) {
         if (!dialog.bullet[index]) {
             dialog.bullet[index].sprite = Sprite(dialog.bullet_image);
@@ -111,7 +130,7 @@ fun display_password_callback(prompt, bullets)
         dialog.bullet[index].sprite.SetX(dialog.entry.sprite.GetX() + 5 + (index % 21) * (dialog.bullet_image.GetWidth() + 2));
         dialog.bullet[index].sprite.SetY(dialog.entry.sprite.GetY() + dialog.entry.image.GetHeight() / 2 - dialog.bullet_image.GetHeight() / 2);
 
-        if (index < bullets && global.password_echo)
+        if (index < bullets && global.show_dots)
             dialog.bullet[index].sprite.SetOpacity(1);
         else
             dialog.bullet[index].sprite.SetOpacity(0);
@@ -120,14 +139,20 @@ fun display_password_callback(prompt, bullets)
 
 fun keyboard_input_callback(key){
     if (key == "[[A") {
-        global.password_echo = 0;
+        global.show_dots = 0;
+        global.show_plaintext_password = 0;
         dialog_setup(global.dialog.prompt.text);
-        display_password_callback(global.dialog.prompt.text, global.bullet_count);
-    }
-    if (key == "[[B") {
-        global.password_echo = 1;
+        display_password_callback(global.dialog.prompt.text, global.bullet_count, global.plaintext_password);
+    } else if (key == "[[B") {
+        global.show_dots = 1;
+        global.show_plaintext_password = 0;
         dialog_setup(global.dialog.prompt.text);
-        display_password_callback(global.dialog.prompt.text, global.bullet_count);
+        display_password_callback(global.dialog.prompt.text, global.bullet_count, global.plaintext_password);
+    } else if (key == "[[C") {
+        global.show_dots = 0;
+        global.show_plaintext_password = 1;
+        dialog_setup(global.dialog.prompt.text);
+        display_password_callback(global.dialog.prompt.text, global.bullet_count, global.plaintext_password);
     }
 }
 
