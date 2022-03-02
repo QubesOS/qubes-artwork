@@ -50,7 +50,7 @@ fun dialog_setup(text)
     entry.sprite.SetY(prompt.sprite.GetY() + prompt.image.GetHeight() + 16);
     entry.sprite.SetZ(1);
 
-    help.image = Image.Text("F1 - Hide password bullets\nF2 - Show password as bullets\nF3 - Show password as text", 0.8, 0.8, 0.8);
+    help.image = Image.Text("F1 - Hide password bullets\nF2 - Show password as bullets\nF8 - Show password as text", 0.8, 0.8, 0.8);
     help.sprite = Sprite(help.image);
     
     aemsecret.sprite = Sprite(aemsecret.image);
@@ -148,7 +148,7 @@ fun keyboard_input_callback(key){
         global.show_plaintext_password = 0;
         dialog_setup(global.dialog.prompt.text);
         display_password_callback(global.dialog.prompt.text, global.bullet_count, global.plaintext_password);
-    } else if (key == "[[C") {
+    } else if (key == "[19~") {
         global.show_dots = 0;
         global.show_plaintext_password = 1;
         dialog_setup(global.dialog.prompt.text);
