@@ -70,8 +70,14 @@ fun dialog_opacity(opacity)
     dialog.prompt.sprite.SetOpacity(opacity);
     dialog.aemsecret.sprite.SetOpacity(opacity);
     dialog.entry.sprite.SetOpacity(opacity);
-    for (index = 0; dialog.bullet[index]; index++) {
-        dialog.bullet[index].sprite.SetOpacity(opacity);
+    dialog.help.sprite.SetOpacity(opacity);
+    if (global.show_dots) {
+        for (index = 0; dialog.bullet[index]; index++) {
+            dialog.bullet[index].sprite.SetOpacity(opacity);
+        }
+    }
+    if (global.show_plaintext_password) {
+        dialog.plaintext_password.sprite.SetOpacity(opacity);
     }
 }
 
