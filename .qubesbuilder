@@ -1,0 +1,11 @@
+host:
+  rpm:
+    spec:
+    - qubes-artwork.spec
+vm:
+  rpm:
+    spec:
+    - qubes-artwork.spec
+  deb:
+    build:
+    - debian
