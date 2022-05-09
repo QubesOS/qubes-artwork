@@ -1,10 +1,10 @@
 host:
   rpm:
-    spec:
+    build:
     - qubes-artwork.spec
 vm:
   rpm:
-    spec:
+    build:
     - qubes-artwork.spec
   deb:
     build:
