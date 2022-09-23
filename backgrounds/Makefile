@@ -22,12 +22,12 @@ install:
 	install -t $(DESTDIR)/usr/share/backgrounds/qubes -m 644 $(ALLSVG)
 	install -t $(DESTDIR)/usr/share/backgrounds/qubes -m 644 $(ALLJPG)
 
-	install -d $(DESTDIR)/usr/share/backgrounds/xfce
+	install -d $(DESTDIR)/usr/share/backgrounds/images
 	for svg in $(notdir $(ALLSVG)); do \
-		ln -s ../qubes/$$svg $(DESTDIR)/usr/share/backgrounds/xfce/ || exit 1; \
+		ln -s ../qubes/$$svg $(DESTDIR)/usr/share/backgrounds/images/ || exit 1; \
 	done
 	for jpg in $(notdir $(ALLJPG)); do \
-		ln -s ../qubes/$$jpg $(DESTDIR)/usr/share/backgrounds/xfce/ || exit 1; \
+		ln -s ../qubes/$$jpg $(DESTDIR)/usr/share/backgrounds/images/ || exit 1; \
 	done
 
 	install -d $(DESTDIR)/usr/share/wallpapers
