@@ -42,10 +42,10 @@ X-KDE-PluginInfo-License=${LICENCE}
 EOF
 
 mkdir -p "${DST}"/contents
-convert "${SRC}" -resize 1920x1080 -crop 375x250+250+520 "${DST}"/contents/screenshot.png
+gm convert "${SRC}" -resize 1920x1080 -crop 375x250+250+520 "${DST}"/contents/screenshot.png
 
 mkdir -p "${DST}"/contents/images
 for geometry in "$@"; do
 	echo "  resizing to ${geometry}" >&2
-	convert "${SRC}" -geometry "${geometry}^" -gravity center -extent "${geometry}" "${DST}"/contents/images/"${geometry}".png
+	gm convert "${SRC}" -geometry "${geometry}^" -gravity center -extent "${geometry}" "${DST}"/contents/images/"${geometry}".png
 done

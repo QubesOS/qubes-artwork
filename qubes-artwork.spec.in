@@ -23,7 +23,7 @@ Provides:	qubes-logos = %{version}-%{release}
 
 BuildRequires:	make
 BuildRequires:	inkscape
-BuildRequires:  ImageMagick
+BuildRequires:	GraphicsMagick
 BuildRequires:	google-roboto-fonts
 BuildRequires:	python%{python3_pkgversion}-qubesimgconverter
 BuildRequires:	netpbm-progs

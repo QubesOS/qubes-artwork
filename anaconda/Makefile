@@ -10,18 +10,18 @@ all: $(ALL) syslinux-splash.png
 
 splash.png: GEOMETRY = 128x128
 %.png: %.svg
-	convert -background none -geometry $(GEOMETRY) $< $@
+	gm convert -background none -geometry $(GEOMETRY) $< $@
 
 syslinux-vesa-splash.jpg: splash.svg
-	convert splash.svg $@
+	gm convert splash.svg $@
 
 syslinux-splash.png: syslinux-splash.svg
-	convert $< -colors 12 -geometry "640x480!" $@
+	gm convert $< -colors 12 -geometry "640x480!" $@
 
 # this part requires syslinux-perl
 # (not in BuildRequires, but are we using syslinux?)
 syslinux-splash.pnm: syslinux-splash.rel.svg
-	convert $< -colors 12 $@
+	gm convert $< -colors 12 $@
 
 splash.lss: syslinux-splash.pnm
 	ppmtolss16 '#000000=0' '#ffffff=1' '#cdcfd5=7' '#c90000=15' < $< > $@

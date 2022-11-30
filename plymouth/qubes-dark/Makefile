@@ -4,7 +4,7 @@ all: $(ALL)
 .PHONY: all
 
 %.png: %.svg
-	convert -background none -antialias $< $@
+	gm convert -background none -antialias $< $@
 #	inkscape --export-png=$@ $<
 
 padlock.png:
