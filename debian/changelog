@@ -1,3 +1,14 @@
+qubes-artwork (4.1.14-1) unstable; urgency=medium
+
+  [ Micah Lee ]
+  * Add several public domain background, and update the Makefile to
+    install the new .jpg files
+
+  [ Marta Marczykowska-Górecka ]
+  * Added new backgrounds to spec file
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Sat, 17 Dec 2022 02:16:38 +0100
+
 qubes-artwork (4.1.13-1) unstable; urgency=medium
 
   [ Frédéric Pierret (fepitre) ]
