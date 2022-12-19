@@ -5,7 +5,7 @@ all: $(ALL)
 
 splash-small.png: GEOMETRY = 128x128
 %.png: %.svg
-	convert -background none -geometry $(GEOMETRY) $< $@
+	gm convert -background none -geometry $(GEOMETRY) $< $@
 
 clean:
 	$(RM) $(ALL)

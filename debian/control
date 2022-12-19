@@ -5,7 +5,7 @@ Maintainer: Frédéric Pierret (fepitre) <frederic.pierret@qubes-os.org>
 Build-Depends:
  debhelper (>= 10~),
  inkscape,
- imagemagick,
+ graphicsmagick,
  librsvg2-bin,
  netpbm,
  fonts-roboto,
