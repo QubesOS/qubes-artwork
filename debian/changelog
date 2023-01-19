@@ -1,3 +1,10 @@
+qubes-artwork (4.1.16-1) unstable; urgency=medium
+
+  [ Mateusz Piórkowski ]
+  * Replace ImageMagick with GraphicsMagick
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Thu, 19 Jan 2023 19:57:04 +0100
+
 qubes-artwork (4.1.15-1) unstable; urgency=medium
 
   [ Marta Marczykowska-Górecka ]
