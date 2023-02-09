@@ -858,6 +858,7 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %files anaconda
 # anaconda
 %{_datadir}/anaconda/boot/syslinux-splash.png
+%{_datadir}/anaconda/pixmaps/qubes.css
 %{_datadir}/anaconda/pixmaps/anaconda_header.png
 %{_datadir}/anaconda/pixmaps/progress_first-lowres.png
 %{_datadir}/anaconda/pixmaps/progress_first.png

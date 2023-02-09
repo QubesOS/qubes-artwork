@@ -43,6 +43,7 @@ install:
 	mkdir -p $(DESTDIR)/usr/share/anaconda/pixmaps
 	install -m 0644 -t $(DESTDIR)/usr/share/anaconda/pixmaps \
 		$(ALL) \
+		qubes.css \
 		anaconda_header.png \
 		sidebar-bg.png \
 		sidebar-logo.png \
