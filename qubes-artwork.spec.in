@@ -125,6 +125,14 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %{_datadir}/icons/hicolor/scalable/apps/templatevm-purple.svg
 %{_datadir}/icons/hicolor/scalable/apps/templatevm-red.svg
 %{_datadir}/icons/hicolor/scalable/apps/templatevm-yellow.svg
+%{_datadir}/icons/hicolor/scalable/apps/standalonevm-black.svg
+%{_datadir}/icons/hicolor/scalable/apps/standalonevm-blue.svg
+%{_datadir}/icons/hicolor/scalable/apps/standalonevm-gray.svg
+%{_datadir}/icons/hicolor/scalable/apps/standalonevm-green.svg
+%{_datadir}/icons/hicolor/scalable/apps/standalonevm-orange.svg
+%{_datadir}/icons/hicolor/scalable/apps/standalonevm-purple.svg
+%{_datadir}/icons/hicolor/scalable/apps/standalonevm-red.svg
+%{_datadir}/icons/hicolor/scalable/apps/standalonevm-yellow.svg
 %{_datadir}/icons/hicolor/16x16/apps/qubes-appmenu-select.png
 %{_datadir}/icons/hicolor/16x16/apps/qubes-logo-icon.png
 %{_datadir}/icons/hicolor/16x16/apps/qubes-manager.png
