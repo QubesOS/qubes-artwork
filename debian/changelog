@@ -1,3 +1,24 @@
+qubes-artwork (4.2.0-1) unstable; urgency=medium
+
+  [ Marek Marczykowski-Górecki ]
+  * Add stylesheet to anaconda branding
+
+  [ Nathan Harvey ]
+  * Create standalonevm-blue.svg
+  * Finalize pattern for standalone VM SVG
+  * Create standalonevm-yellow.svg
+  * Create standalonevm-orange.svg
+  * Create standalonevm-red.svg
+  * Create standalonevm-green.svg
+  * Create standalonevm-black.svg
+  * Create standalonevm-gray.svg
+  * Create standalonevm-purple.svg
+
+  [ Marta Marczykowska-Górecka ]
+  * Add standalone icons to spec
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Sat, 11 Feb 2023 00:07:23 +0100
+
 qubes-artwork (4.1.16-1) unstable; urgency=medium
 
   [ Mateusz Piórkowski ]
