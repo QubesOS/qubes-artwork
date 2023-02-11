@@ -16,6 +16,9 @@ Plymouth.SetRefreshFunction(refresh_callback);
 #----------------------------------------- Dialogue --------------------------------
 
 status = "normal";
+show_dots = 1;
+show_plaintext_password = 0;
+plaintext_password = "";
 
 fun dialog_setup(text)
 {
@@ -29,7 +32,11 @@ fun dialog_setup(text)
     # Try to load AEM secret image, if the file doesn't exists, plymouth shouldn't display anything
     aemsecret.image = Image("antievilmaid_secret.png");
 
-    entry.image = Image("entry.png");
+    if (global.show_dots || global.show_plaintext_password) {
+        entry.image = Image("entry.png");
+    } else {
+        entry.image = Image.Text("Password bullets will be hidden", 0.8, 0.8, 0.8);
+    }
     
     prompt.sprite = Sprite(prompt.image);
     prompt.sprite.SetX(logo.sprite.GetX() + (logo.image.GetWidth() - prompt.image.GetWidth()) / 2);
@@ -41,6 +48,9 @@ fun dialog_setup(text)
     entry.sprite.SetX(prompt.sprite.GetX() + (prompt.image.GetWidth() - entry.image.GetWidth()) / 2);
     entry.sprite.SetY(prompt.sprite.GetY() + prompt.image.GetHeight() + 16);
     entry.sprite.SetZ(1);
+
+    help.image = Image.Text("F1 - Hide password bullets\nF2 - Show password as bullets\nF8 - Show password as text", 0.8, 0.8, 0.8);
+    help.sprite = Sprite(help.image);
     
     aemsecret.sprite = Sprite(aemsecret.image);
     aemsecret.sprite.SetX(entry.sprite.GetX() + (entry.image.GetWidth() - aemsecret.image.GetWidth()) / 2);
@@ -49,6 +59,7 @@ fun dialog_setup(text)
     
     global.dialog.prompt = prompt;
     global.dialog.entry = entry;
+    global.dialog.help = help;
     global.dialog.aemsecret = aemsecret;
     global.dialog.bullet_image = Image("bullet.png");
     dialog_opacity(1);
@@ -59,8 +70,14 @@ fun dialog_opacity(opacity)
     dialog.prompt.sprite.SetOpacity(opacity);
     dialog.aemsecret.sprite.SetOpacity(opacity);
     dialog.entry.sprite.SetOpacity(opacity);
-    for (index = 0; dialog.bullet[index]; index++) {
-        dialog.bullet[index].sprite.SetOpacity(opacity);
+    dialog.help.sprite.SetOpacity(opacity);
+    if (global.show_dots) {
+        for (index = 0; dialog.bullet[index]; index++) {
+            dialog.bullet[index].sprite.SetOpacity(opacity);
+        }
+    }
+    if (global.show_plaintext_password) {
+        dialog.plaintext_password.sprite.SetOpacity(opacity);
     }
 }
 
@@ -71,8 +88,11 @@ fun display_normal_callback()
         dialog_opacity(0);
 }
 
-fun display_password_callback(prompt, bullets)
+fun display_prompt_callback(prompt, password, is_secret)
 {
+    bullets = password.Length();
+    global.plaintext_password = password;
+
     if (prompt.SubString(0,32) == "Please enter passphrase for disk") {
         prompt = "Disk password";
     }
@@ -90,23 +110,61 @@ fun display_password_callback(prompt, bullets)
         }
     }
 
+    if (global.show_plaintext_password) {
+        max_password_width = dialog.entry.image.GetWidth()-5*2;
+        dialog.plaintext_password.image = Image.Text(password);
+        password_width = dialog.plaintext_password.image.GetWidth();
+
+        if (password_width > max_password_width)
+            dialog.plaintext_password.image = dialog.plaintext_password.image.Crop(password_width-max_password_width, 0, max_password_width, dialog.plaintext_password.image.GetHeight());
+        dialog.plaintext_password.sprite = Sprite(dialog.plaintext_password.image);
+        dialog.plaintext_password.sprite.SetX(dialog.entry.sprite.GetX() + 5);
+        dialog.plaintext_password.sprite.SetY(dialog.entry.sprite.GetY() + dialog.entry.image.GetHeight() / 2 - dialog.plaintext_password.image.GetHeight() / 2);
+        dialog.plaintext_password.sprite.SetZ(2);
+        dialog.plaintext_password.sprite.SetOpacity(1);
+    } else {
+        dialog.plaintext_password.sprite.SetOpacity(0);
+    }
+
     for (index = 0; dialog.bullet[index] || index < bullets; index++) {
         if (!dialog.bullet[index]) {
             dialog.bullet[index].sprite = Sprite(dialog.bullet_image);
-            dialog.bullet[index].sprite.SetX(dialog.entry.sprite.GetX() + 5 + (index % 21) * (dialog.bullet_image.GetWidth() + 2));
-            dialog.bullet[index].sprite.SetY(dialog.entry.sprite.GetY() + dialog.entry.image.GetHeight() / 2 - dialog.bullet_image.GetHeight() / 2);
             dialog.bullet[index].sprite.SetZ(dialog.entry.sprite.GetZ() + 1);
         }
 
-        if (index < bullets)
+        /* Always update position, otherwise bullets added during no echo mode will be at the wrong position */
+        dialog.bullet[index].sprite.SetX(dialog.entry.sprite.GetX() + 5 + (index % 21) * (dialog.bullet_image.GetWidth() + 2));
+        dialog.bullet[index].sprite.SetY(dialog.entry.sprite.GetY() + dialog.entry.image.GetHeight() / 2 - dialog.bullet_image.GetHeight() / 2);
+
+        if (index < bullets && global.show_dots)
             dialog.bullet[index].sprite.SetOpacity(1);
         else
             dialog.bullet[index].sprite.SetOpacity(0);
       }
 }
 
+fun keyboard_input_callback(key){
+    if (key == "[[A") {
+        global.show_dots = 0;
+        global.show_plaintext_password = 0;
+        dialog_setup(global.dialog.prompt.text);
+        display_prompt_callback(global.dialog.prompt.text, global.plaintext_password, 1);
+    } else if (key == "[[B") {
+        global.show_dots = 1;
+        global.show_plaintext_password = 0;
+        dialog_setup(global.dialog.prompt.text);
+        display_prompt_callback(global.dialog.prompt.text, global.plaintext_password, 1);
+    } else if (key == "[19~") {
+        global.show_dots = 0;
+        global.show_plaintext_password = 1;
+        dialog_setup(global.dialog.prompt.text);
+        display_prompt_callback(global.dialog.prompt.text, global.plaintext_password, 1);
+    }
+}
+
+Plymouth.SetKeyboardInputFunction(keyboard_input_callback);
 Plymouth.SetDisplayNormalFunction(display_normal_callback);
-Plymouth.SetDisplayPasswordFunction(display_password_callback);
+Plymouth.SetDisplayPromptFunction(display_prompt_callback);
 
 #----------------------------------------- Progress Bar --------------------------------
 
