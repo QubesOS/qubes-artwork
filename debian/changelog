@@ -1,3 +1,17 @@
+qubes-artwork (4.2.1-1) unstable; urgency=medium
+
+  [ Mateusz Piórkowski ]
+  * plymouth: add no echo mode
+  * plymouth: add show password mode
+  * plymouth: make show password and show password as bullets keys be
+    further apart
+  * plymouth: update theme to work with
+    9ee0a053021f478b2f05b7aaa2512edc3c4123ef
+  * plymouth: make help only visible during password entry and hide
+    plaintext password after entry
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Wed, 15 Feb 2023 12:58:40 +0100
+
 qubes-artwork (4.2.0-1) unstable; urgency=medium
 
   [ Marek Marczykowski-Górecki ]
