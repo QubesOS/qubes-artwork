@@ -6,9 +6,19 @@ logo.sprite = Sprite(logo.image);
 logo.opacity_angle = 0;
 
 fun refresh_callback () {
+    # Reposition everything 50 times per second
+    # This is necessary on multi-monitor systems with different resolution
     logo.sprite.SetX(Window.GetX() + (Window.GetWidth()  - logo.image.GetWidth())  / 2);
     logo.sprite.SetY(Window.GetY() + (Window.GetHeight() - logo.image.GetHeight()) / 2);
     logo.sprite.SetOpacity(1);
+    if (global.dialog) {
+        global.dialog.prompt.sprite.SetX(logo.sprite.GetX() + (logo.image.GetWidth() - prompt.image.GetWidth()) / 2);
+        global.dialog.prompt.sprite.SetY(logo.sprite.GetY() + logo.image.GetHeight() + 16);
+        global.dialog.prompt.sprite.SetZ(1);
+        global.entry.sprite.SetX(prompt.sprite.GetX() + (prompt.image.GetWidth() - entry.image.GetWidth()) / 2);
+        global.entry.sprite.SetY(prompt.sprite.GetY() + prompt.image.GetHeight() + 16);
+        global.entry.sprite.SetZ(1);
+    }
 }
   
 Plymouth.SetRefreshFunction(refresh_callback);
