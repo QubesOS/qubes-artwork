@@ -1,3 +1,10 @@
+qubes-artwork (4.2.2-1) unstable; urgency=medium
+
+  [ Ali Mirjamali ]
+  * Qubes outline logo for Plymouth shutdown splash
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Fri, 19 Jul 2024 23:02:13 +0200
+
 qubes-artwork (4.2.1-1) unstable; urgency=medium
 
   [ Mateusz Piórkowski ]
