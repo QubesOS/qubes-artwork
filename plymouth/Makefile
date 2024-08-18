@@ -10,6 +10,6 @@ clean:
 
 install:
 	for dir in $(DIRS); do $(MAKE) -C $$dir DESTDIR=$(DESTDIR) $@ || exit 1; done
-	mkdir -p $(DESTDIR)/etc/dracut.conf.d/
-	cp plymouth-missing-fonts.conf $(DESTDIR)/etc/dracut.conf.d/
+	mkdir -p $(DESTDIR)/usr/lib/dracut/dracut.conf.d/
+	cp plymouth-missing-fonts.conf $(DESTDIR)/usr/lib/dracut/dracut.conf.d/
 .PHONY: install

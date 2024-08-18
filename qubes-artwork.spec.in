@@ -836,7 +836,7 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %{_datadir}/wallpapers/Qubes_Wine/metadata.desktop
 
 %files plymouth
-%{_sysconfdir}/dracut.conf.d/plymouth-missing-fonts.conf
+/usr/lib/dracut/dracut.conf.d/plymouth-missing-fonts.conf
 %{_datadir}/plymouth/themes/qubes-dark/bullet.png
 %{_datadir}/plymouth/themes/qubes-dark/entry.png
 %{_datadir}/plymouth/themes/qubes-dark/padlock.png
