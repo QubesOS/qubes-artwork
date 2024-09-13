@@ -18,8 +18,8 @@ else
 }
 
 fun refresh_callback () {
-    logo.sprite.SetX(Window.GetX() + (Window.GetWidth()  - logo.image.GetWidth())  / 2);
-    logo.sprite.SetY(Window.GetY() + (Window.GetHeight() - logo.image.GetHeight()) / 2);
+    logo.sprite.SetX((Window.GetWidth()  - logo.image.GetWidth())  / 2);
+    logo.sprite.SetY((Window.GetHeight() - logo.image.GetHeight()) / 2);
     logo.sprite.SetOpacity(1);
 }
   
@@ -182,7 +182,7 @@ Plymouth.SetDisplayPromptFunction(display_prompt_callback);
 
 progress_box.image = Image("progress_box.png");
 progress_box.sprite = Sprite(progress_box.image);
-progress_box.sprite.SetX(Window.GetX() + (Window.GetWidth() - progress_box.image.GetWidth()) / 2);
+progress_box.sprite.SetX((Window.GetWidth() - progress_box.image.GetWidth()) / 2);
 progress_box.sprite.SetY(Window.GetHeight() - 50 - progress_box.image.GetHeight() / 2);
 
 progress_bar.original_image = Image("progress_bar.png");
