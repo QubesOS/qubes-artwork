@@ -1,3 +1,14 @@
+qubes-artwork (4.2.3-1) unstable; urgency=medium
+
+  [ Marek Marczykowski-Górecki ]
+  * Fix setting default background in xfce
+  * Fix wrong logo position on plymouth
+
+  [ Frédéric Pierret (fepitre) ]
+  * backgrounds: add more geometries
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Tue, 03 Dec 2024 12:19:13 +0100
+
 qubes-artwork (4.2.2-1) unstable; urgency=medium
 
   [ Ali Mirjamali ]
