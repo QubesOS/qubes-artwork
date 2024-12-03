@@ -1,3 +1,10 @@
+qubes-artwork (4.3.3-1) unstable; urgency=medium
+
+  [ Frédéric Pierret (fepitre) ]
+  * backgrounds: add more geometries
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Tue, 03 Dec 2024 12:14:39 +0100
+
 qubes-artwork (4.3.2-1) unstable; urgency=medium
 
   * Fix wrong logo position on plymouth
