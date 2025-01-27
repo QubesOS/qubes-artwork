@@ -9,11 +9,6 @@ Vendor:		Invisible Things Lab
 URL:		https://www.qubes-os.org
 BuildArch:	noarch
 
-Obsoletes:	system-logos
-Obsoletes:	redhat-logos
-Obsoletes:	fedora-logos
-Obsoletes:	desktop-backgrounds-compat
-
 Provides:	system-logos = 1000:%{version}-%{release}
 Provides:	redhat-logos = 1000:%{version}-%{release}
 Provides:	fedora-logos = 1000:%{version}-%{release}
