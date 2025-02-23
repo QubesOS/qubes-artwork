@@ -1,3 +1,10 @@
+qubes-artwork (4.3.6-1) unstable; urgency=medium
+
+  [ Marta Marczykowska-Górecka ]
+  * Dom0 icon partially restored to older design
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Mon, 24 Feb 2025 00:40:31 +0100
+
 qubes-artwork (4.3.5-1) unstable; urgency=medium
 
   * rpm: Restore Obsoletes: headers
