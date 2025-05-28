@@ -51,5 +51,7 @@ install:
 	ln -s ../../wallpapers/Qubes_Steel/contents/images/1920x1080.png $(DESTDIR)/usr/share/backgrounds/images/default.png
 	gm convert $(DESTDIR)/usr/share/backgrounds/images/default.png \
 		$(DESTDIR)/usr/share/backgrounds/images/default.webp
+	gm convert $(DESTDIR)/usr/share/backgrounds/images/default.png \
+		$(DESTDIR)/usr/share/backgrounds/images/default.jxl
 
 .PHONY: install
