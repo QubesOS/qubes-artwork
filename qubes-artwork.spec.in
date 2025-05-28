@@ -689,6 +689,7 @@ xdg-icon-resource forceupdate --theme oxygen || :
 %{_datadir}/backgrounds/default.png
 %{_datadir}/backgrounds/images/default.png
 %{_datadir}/backgrounds/images/default.webp
+%{_datadir}/backgrounds/images/default.jxl
 %{_datadir}/backgrounds/qubes/benjamin-voros-phIFdC6lA4E-unsplash.jpg
 %{_datadir}/backgrounds/qubes/garrett-parker-DlkF4-dbCOU-unsplash.jpg
 %{_datadir}/backgrounds/qubes/jeremy-thomas-pq2DJBntZW0-unsplash.jpg
