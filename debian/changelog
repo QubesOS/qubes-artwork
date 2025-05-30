@@ -1,3 +1,9 @@
+qubes-artwork (4.3.7-1) unstable; urgency=medium
+
+  * Include default background in jxl format too
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Fri, 30 May 2025 04:15:44 +0200
+
 qubes-artwork (4.3.6-1) unstable; urgency=medium
 
   [ Marta Marczykowska-Górecka ]
