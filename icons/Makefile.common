@@ -26,6 +26,14 @@ ALL = \
 	devices/templatevm-blue.png \
 	devices/templatevm-purple.png \
 	devices/templatevm-black.png \
+	devices/remotevm-red.png \
+	devices/remotevm-orange.png \
+	devices/remotevm-yellow.png \
+	devices/remotevm-green.png \
+	devices/remotevm-gray.png \
+	devices/remotevm-blue.png \
+	devices/remotevm-purple.png \
+	devices/remotevm-black.png \
 	devices/servicevm-red.png \
 	devices/servicevm-orange.png \
 	devices/servicevm-yellow.png \
@@ -55,6 +63,7 @@ devices/%-black.png:	NAME = black
 devices/appvm-%.png: TYPE = appvm
 devices/dispvm-%.png: TYPE = dispvm
 devices/templatevm-%.png: TYPE = templatevm
+devices/remotevm-%.png: TYPE = remotevm
 devices/servicevm-%.png: TYPE = servicevm
 devices/adminvm-%.png: TYPE = adminvm
 
