@@ -17,3 +17,5 @@ Package: qubes-artwork
 Section: graphics
 Architecture: amd64
 Description: Qubes-branded backgrounds, icons, themes.
+Depends:
+ desktop-base,
