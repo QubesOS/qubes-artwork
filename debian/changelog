@@ -1,3 +1,13 @@
+qubes-artwork (4.3.8-1) unstable; urgency=medium
+
+  [ Marta Marczykowska-Górecka ]
+  * Add icons for remote vms
+
+  [ Marek Marczykowski-Górecki ]
+  * Set default desktop background on Debian too
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Fri, 08 Aug 2025 01:56:40 +0200
+
 qubes-artwork (4.3.7-1) unstable; urgency=medium
 
   * Include default background in jxl format too
