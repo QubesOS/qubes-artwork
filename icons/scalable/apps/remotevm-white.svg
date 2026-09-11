@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="43.606"
+   height="48"
+   fill="none"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="remotevm-black.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="12.65625"
+     inkscape:cx="30.893827"
+     inkscape:cy="24.414815"
+     inkscape:window-width="1450"
+     inkscape:window-height="1250"
+     inkscape:window-x="2936"
+     inkscape:window-y="95"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg12" />
+  <g
+     style="fill:#000000"
+     id="g2"
+     transform="matrix(0.97758146,0,0,0.97758146,0.48879087,0.53804584)">
+    <path
+       d="M 43.606,33.396 V 14.605 A 5.159,5.159 0 0 0 40.99,10.122 L 24.378,0.68 a 5.215,5.215 0 0 0 -5.15,0 L 2.615,10.122 A 5.16,5.16 0 0 0 0,14.605 v 18.79 c 0,1.853 0.998,3.564 2.616,4.483 l 16.611,9.442 a 5.216,5.216 0 0 0 5.151,0 L 40.99,37.878 a 5.158,5.158 0 0 0 2.616,-4.482 z"
+       class="fills"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#f3f4f6;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       id="path1" />
+    <path
+       d="m 0,33.396 c 0,1.852 0.998,3.563 2.616,4.482 l 16.662,9.47 c 1.125,0.64 2.525,-0.167 2.525,-1.456 V 26.996 A 5.158,5.158 0 0 0 19.187,22.513 L 2.524,13.043 C 1.4,12.403 0,13.212 0,14.5 Z"
+       class="fills"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#737373;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       id="path2" />
+  </g>
+  <g
+     style="fill:#000000"
+     id="g12"
+     transform="matrix(0.97758146,0,0,0.97758146,0.48879087,0.53804584)">
+    <ellipse
+       cx="21.802999"
+       cy="24"
+       class="fills"
+       rx="14.438"
+       ry="14.361"
+       style="display:inline;fill:none;fill-opacity:1;stroke-linecap:round;stroke-linejoin:round"
+       id="ellipse2" />
+    <g
+       class="strokes"
+       style="fill:none;fill-opacity:1;stroke:#d4d4d4;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="g6">
+      <g
+         class="outer-stroke-shape"
+         id="g5"
+         style="stroke:#d4d4d4;stroke-opacity:1">
+        <defs
+           id="defs3">
+          <ellipse
+             id="a"
+             cx="21.802999"
+             cy="24"
+             rx="14.438"
+             ry="14.361" />
+          <mask
+             id="b"
+             width="37.362"
+             height="37.207"
+             x="3.122"
+             y="5.397"
+             maskUnits="userSpaceOnUse">
+            <use
+               href="#a"
+               style="fill:none;stroke:#ffffff;stroke-width:6"
+               id="use2" />
+            <use
+               href="#a"
+               style="fill:#000000;stroke:none"
+               id="use3" />
+          </mask>
+        </defs>
+        <use
+           href="#a"
+           mask="url(#b)"
+           style="fill:none;stroke:#d4d4d4;stroke-width:6;stroke-opacity:1"
+           id="use4" />
+        <use
+           href="#a"
+           style="fill:none;stroke:#d4d4d4;stroke-width:3;stroke-opacity:1"
+           id="use5" />
+      </g>
+    </g>
+    <path
+       d="m 21.803,9.64 c -7.7,8.041 -7.7,20.679 0,28.72 7.7,-8.041 7.7,-20.679 0,-28.72"
+       class="fills"
+       style="display:inline;fill:none;stroke-linecap:round;stroke-linejoin:round"
+       id="path6" />
+    <g
+       class="strokes"
+       style="display:inline;fill:none;stroke:#d4d4d4;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="g10">
+      <g
+         class="outer-stroke-shape"
+         id="g9"
+         style="stroke:#d4d4d4;stroke-opacity:1">
+        <defs
+           id="defs7">
+          <path
+             id="c"
+             d="m 21.803,9.64 c -7.7,8.041 -7.7,20.679 0,28.72 7.7,-8.041 7.7,-20.679 0,-28.72" />
+          <mask
+             id="d"
+             width="26.036"
+             height="43.207"
+             x="8.785"
+             y="2.397"
+             maskUnits="userSpaceOnUse">
+            <use
+               href="#c"
+               style="fill:none;stroke:#ffffff;stroke-width:6"
+               id="use6" />
+            <use
+               href="#c"
+               style="fill:#000000;stroke:none"
+               id="use7" />
+          </mask>
+        </defs>
+        <use
+           href="#c"
+           mask="url(#d)"
+           style="fill:none;stroke:#d4d4d4;stroke-width:6;stroke-opacity:1"
+           id="use8" />
+        <use
+           href="#c"
+           style="fill:none;stroke:#d4d4d4;stroke-width:3;stroke-opacity:1"
+           id="use9" />
+      </g>
+    </g>
+    <path
+       d="M 7.365,24 H 36.24"
+       class="fills"
+       style="display:inline;fill:none;stroke-linecap:round;stroke-linejoin:round"
+       id="path10" />
+    <g
+       class="strokes"
+       style="display:inline;fill:none;stroke:#d4d4d4;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="g11">
+      <path
+         d="M 7.365,24 H 36.24"
+         class="stroke-shape"
+         style="fill:none;stroke:#d4d4d4;stroke-width:3;stroke-opacity:1"
+         id="path11" />
+    </g>
+  </g>
+</svg>
