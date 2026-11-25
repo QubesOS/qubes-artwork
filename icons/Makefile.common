@@ -2,6 +2,7 @@ SIZE = $(firstword $(subst x, ,$(notdir $(shell pwd))))
 DIRS = apps devices places
 ALL = \
 	devices/adminvm-black.png \
+	devices/qube-unknown.png \
 	devices/appvm-red.png \
 	devices/appvm-orange.png \
 	devices/appvm-yellow.png \
@@ -95,6 +96,7 @@ devices/%-indigo.png:	NAME = indigo
 devices/%-lime.png:	NAME = lime
 devices/%-pink.png:	NAME = pink
 devices/%-white.png:	NAME = white
+devices/qube-unknown.png: NAME = unknown
 
 devices/appvm-%.png: TYPE = appvm
 devices/dispvm-%.png: TYPE = dispvm
@@ -102,6 +104,7 @@ devices/templatevm-%.png: TYPE = templatevm
 devices/remotevm-%.png: TYPE = remotevm
 devices/servicevm-%.png: TYPE = servicevm
 devices/adminvm-%.png: TYPE = adminvm
+devices/qube-unknown.png: TYPE = qube
 
 devices/%.png:
 ifeq ($(strip $(shell inkscape --version | grep -o 'Inkscape 0.')),Inkscape 0.)
