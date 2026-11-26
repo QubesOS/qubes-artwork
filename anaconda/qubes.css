@@ -29,9 +29,15 @@
     background-color: transparent;
 }
 
+/* The spoke title and Done button sit on the left of the header, the product
+ * name and keyboard layout on the right: show the logo (and the cubes on its
+ * left) once, in the middle. The background color matches the one around the
+ * logo in the image.
+ */
 AnacondaSpokeWindow #nav-box {
-    background-color: @qubes;
+    background-color: #499dd8;
     background-image: url('/usr/share/anaconda/pixmaps/topbar-bg.png');
-    background-repeat: repeat;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
 }

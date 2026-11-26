@@ -1,8 +1,10 @@
 These files are used by anaconda during the installation process.  A
 basic description/specification for them is as follows:
 
-* anaconda_header.png:  This is strip header at the top of
-  the screen during the install. 800x58.
+* anaconda_header.png:  Logo (with cubes on its left) shown in the
+  middle of the header at the top of spoke screens during the install
+  (as topbar-bg.png, see qubes.css). Its background must match the
+  header color in qubes.css.
 * progress_first.png: First graphic displayed during package
   installation.  If there are no rnotes, this is displayed the entire
   time.  500x325
